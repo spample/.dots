@@ -18,7 +18,7 @@ return {
 
   background = {
     {
-      source = { File = "/home/spample/TerminalConfig/gradiant-folder/purple-gradient.png" },
+      source = { File = "/home/spample/Linux-Terminal-Customization-computer/gradiant-folder/purple-gradient.png" },
       opacity = 0.8,
       width = "100%",
       height = "100%",
@@ -32,7 +32,7 @@ return {
 
   --  Window Size --
 
-  initial_cols = 100,
+  initial_cols = 115,
   initial_rows = 28,
 
   window_padding = {

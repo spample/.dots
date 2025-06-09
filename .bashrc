@@ -52,7 +52,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # Seeing as other scripts will use it might as well export it
-export TERMINALCONFIGDIR="$HOME/TerminalConfig"
+export TERMINALCONFIGDIR="$HOME/Linux-Terminal-Customization-computer"
 
 # Allow ctrl-S for history navigation (with ctrl-R)
 [[ $- == *i* ]] && stty -ixon
@@ -656,3 +656,5 @@ if [[ "$(tty)" == "/dev/tty1" ]] && [ -f "$HOME/.xinitrc" ] && grep -q "^exec dw
 fi
 
 export PATH="$HOME/.local/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

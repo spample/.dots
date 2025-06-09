@@ -2,7 +2,7 @@
   // Logo settings (uses your custom emblem)
   "logo": {
     "type": "file",
-    "source": "/home/spample/TerminalConfig/ASCII-folder/MH-emblem",
+    "source": "/home/spample/Linux-Terminal-Customization-computer/ASCII-folder/MH-emblem",
     "color": {
       "1": "red"
     },
@@ -39,6 +39,10 @@
 
     { "type": "wmtheme",      "key": "│ ┌󰉼 Theme",      "keyColor": "blue" },
     { "type": "icons",        "key": "│ ├󰀻 Icons",      "keyColor": "blue" },
+
+    { "type": "cursor",       "key": "│ ├ Cursor",      "keyColor": "blue" },
+    
+
     { "type": "terminalfont", "key": "│ ├🗚 Term Font",   "keyColor": "blue" },
     { "type": "terminal",     "key": "│ ├ Terminal",   "keyColor": "blue" },
     { "type": "command",      "key": "│ ├ Git User",   "keyColor": "blue",   "text": "git config --global user.name || echo 'N/A'"},
