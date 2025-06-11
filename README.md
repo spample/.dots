@@ -39,11 +39,8 @@ sudo nala install ./fastfetch-linux-amd64.deb
 
 # Beutiful Bash 
 
-<<<<<<< HEAD
-cd ~/github
-=======
+
 cd ~/Documents/github
->>>>>>> 3da34e6 (Moved directory)
 git clone https://github.com/christitustech/mybash
 cd mybash
 ./setup.sh
@@ -58,25 +55,13 @@ rm /home/spample/.config/starship.toml
 
 # removing linuxtoolbox
 
-<<<<<<< HEAD
-rmdir ~/linuxtoolbox
-=======
 rm -rf /home/spample/linuxtoolbox
 
->>>>>>> 3da34e6 (Moved directory)
 
 
 # Symbolic File Links
 
-<<<<<<< HEAD
-ln -s /home/spample/Linux-Terminal-Customization-computer/.bashrc /home/spample/.bashrc
 
-ln -s /home/spample/Linux-Terminal-Customization-computer/.wezterm.lua /home/spample/.wezterm.lua
-
-ln -s /home/spample/Linux-Terminal-Customization-computer/config.jsonc /home/spample/.config/fastfetch/config.jsonc
-
-ln -s /home/spample/Linux-Terminal-Customization-computer/starship.toml /home/spample/.config/starship.toml
-=======
 ln -s /home/spample/Documents/Linux-Terminal-Customization-computer/.bashrc /home/spample/.bashrc
 
 ln -s /home/spample/Documents/Linux-Terminal-Customization-computer/.wezterm.lua /home/spample/.wezterm.lua
@@ -84,7 +69,6 @@ ln -s /home/spample/Documents/Linux-Terminal-Customization-computer/.wezterm.lua
 ln -s /home/spample/Documents/Linux-Terminal-Customization-computer/config.jsonc /home/spample/.config/fastfetch/config.jsonc
 
 ln -s /home/spample/Documents/Linux-Terminal-Customization-computer/starship.toml /home/spample/.config/starship.toml
->>>>>>> 3da34e6 (Moved directory)
 
 # Github setup
 

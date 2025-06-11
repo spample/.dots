@@ -18,11 +18,7 @@ return {
 
   background = {
     {
-<<<<<<< HEAD
-      source = { File = "/home/spample/Linux-Terminal-Customization-computer/gradiant-folder/purple-gradient.png" },
-=======
       source = { File = "/home/spample/Documents/Linux-Terminal-Customization-computer/gradiant-folder/purple-gradient.png" },
->>>>>>> 3da34e6 (Moved directory)
       opacity = 0.8,
       width = "100%",
       height = "100%",

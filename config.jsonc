@@ -2,11 +2,7 @@
   // Logo settings (uses your custom emblem)
   "logo": {
     "type": "file",
-<<<<<<< HEAD
-    "source": "/home/spample/Linux-Terminal-Customization-computer/ASCII-folder/MH-emblem",
-=======
     "source": "/home/spample/Documents/Linux-Terminal-Customization-computer/ASCII-folder/MH-emblem",
->>>>>>> 3da34e6 (Moved directory)
     "color": {
       "1": "red"
     },
