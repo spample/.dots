@@ -52,7 +52,11 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 # Seeing as other scripts will use it might as well export it
+<<<<<<< HEAD
 export TERMINALCONFIGDIR="$HOME/Linux-Terminal-Customization-computer"
+=======
+export TERMINALCONFIGDIR="$HOME/Documents/Linux-Terminal-Customization-computer"
+>>>>>>> 3da34e6 (Moved directory)
 
 # Allow ctrl-S for history navigation (with ctrl-R)
 [[ $- == *i* ]] && stty -ixon
