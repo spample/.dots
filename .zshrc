@@ -177,6 +177,7 @@ vi() {
 }
 
 export PATH="$HOME/.platformio/penv/bin:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 
 

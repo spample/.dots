@@ -117,13 +117,59 @@ rm ~/.config/starship.toml
 ### Symbolic File Links
 
 ```
-ln -s ~/Documents/Linux-Terminal-Customization-computer/.zshrc ~/.zshrc
+ln -s ~/Documents/Dots-laptop/.zshrc ~/.zshrc
 
-ln -s ~/Documents/Linux-Terminal-Customization-computer/.wezterm.lua ~/.wezterm.lua
+ln -s ~/Documents/Dots-laptop/.wezterm.lua ~/.wezterm.lua
 
-ln -s ~/Documents/Linux-Terminal-Customization-laptop/fastfetch/config.jsonc ~/.config/fastfetch
+ln -s ~/Documents/Dots-laptop/fastfetch/config.jsonc ~/.config/fastfetch
 
-ln -s ~/Documents/Linux-Terminal-Customization-computer/ohmyposh/Nord-v2.json ~/.config/ohmyposh/
+ln -s ~/Documents/Dots-laptop/ohmyposh/Nord-v2.json ~/.config/ohmyposh/
+
+
+```
+#### nvim-main
+```
+
+ln -s ~/Documents/Dots-laptop/nvim/.neoconf.json  ~/.config/nvim/
+
+ln -s ~/Documents/Dots-laptop/nvim/init.lua  ~/.config/nvim/
+
+ln -s ~/Documents/Dots-laptop/nvim/lazy-lock.json  ~/.config/nvim/
+
+ln -s ~/Documents/Dots-laptop/nvim/lazyvim.json  ~/.config/nvim/
+
+ln -s ~/Documents/Dots-laptop/nvim/LICENSE  ~/.config/nvim/
+
+ln -s ~/Documents/Dots-laptop/nvim/README.md  ~/.config/nvim/
+
+ln -s ~/Documents/Dots-laptop/nvim/stylua.toml  ~/.config/nvim/
+
+```
+#### nvim-plugins
+
+```
+ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/catppuccin.lua ~/.config/nvim/lua/plugins
+
+ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/golfNvim.lua ~/.config/nvim/lua/plugins
+
+ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/lsp.lua ~/.config/nvim/lua/plugins
+
+ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/lualine.lua ~/.config/nvim/lua/plugins
+
+ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/platformio.lua ~/.config/nvim/lua/plugins
+
+```
+
+#### nvim-config
+```
+
+ln -s ~/Documents/Dots-laptop/nvim/lua/config/autocmds.lua ~/.config/nvim/lua/config
+
+ln -s ~/Documents/Dots-laptop/nvim/lua/config/keymaps.lua ~/.config/nvim/lua/config
+
+ln -s ~/Documents/Dots-laptop/nvim/lua/config/lazy.lua ~/.config/nvim/lua/config
+
+ln -s ~/Documents/Dots-laptop/nvim/lua/config/options.lua ~/.config/nvim/lua/config
 
 ```
 ### Github setup
