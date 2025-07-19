@@ -145,6 +145,18 @@ ln -s ~/Documents/Dots/ohmyposh/Nord-v2.json ~/.config/ohmyposh/
 
 
 ```
+#### nvim-directories
+
+```
+mkdir -p ~/.config/nvim
+
+mkdir -p ~/.config/nvim/lua
+
+mkdir -p ~/.config/nvim/lua/plugins
+
+mkdir -p ~/.config/nvim/lua/config
+
+```
 #### nvim-main
 ```
 
