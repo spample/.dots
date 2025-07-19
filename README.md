@@ -124,12 +124,13 @@ rm ~/.bashrc
 rm ~/.bash_history
 rm ~/.bash_logout
 rm ~/.bash_profile
+rm ~/.config/starship.toml
 
 rm ~/.wezterm.lua
 rm ~/.config/fastfetch/config.jsonc
-rm ~/.config/starship.toml
-```
+rm ~/.zshrc
 
+```
 
 ### Symbolic File Links
 
