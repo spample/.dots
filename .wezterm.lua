@@ -18,7 +18,7 @@ return {
 	background = {
 		{
 			source = {
-				File = "/home/spample/Documents/Dots-laptop/gradiant-folder/purple-gradient.png",
+				File = "/home/spample/Documents/Dots/gradiant-folder/purple-gradient.png",
 			},
 			opacity = 0.9,
 			width = "100%",

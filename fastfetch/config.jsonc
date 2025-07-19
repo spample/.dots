@@ -2,7 +2,7 @@
   // Logo settings (uses your custom emblem)
   "logo": {
     "type": "file",
-    "source": "/home/spample/Documents/Dots-laptop/ASCII-folder/MH-emblem",
+    "source": "/home/spample/Documents/Dots/ASCII-folder/MH-emblem",
     "color": {
       "1": "red"
     },

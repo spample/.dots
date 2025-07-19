@@ -51,7 +51,7 @@ cd nerd-fonts
 ./install.sh
 ```
 
-### Refresh the font cache
+#all## Refresh the font cache
 ```
 fc-cache -fv
 ```
@@ -65,7 +65,24 @@ fastfetch --gen-config
 rm ~/.config/fastfetch/config.jsonc
 ```
 
-### Installing Zsh, ohmyposh, zinit 
+### Installing yay
+
+```
+sudo pacman -Syu
+```
+```
+sudo pacman -S --needed git base-devel
+```
+```
+cd ~/Documents/github
+git clone https://aur.archlinux.org/yay.git
+```
+```
+cd yay
+makepkg -si 
+```
+
+### Installing Zsh, ohmyzsh, ohmyposh, zinit
 
 #### Zsh
 ```
@@ -75,18 +92,18 @@ sudo pacman -S zsh
 chsh -s /bin/zsh
 ```
 
+#### ohmyzsh
+
+```
+sh -c "$curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+```
+
 #### ohmyposh
+
 ```
-cd ~/Documents/github
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
+yay -S oh-my-posh
 ```
-```
-sudo pacman -S base-devel
-```
-```
-makepkg -si
-```
+
 #### zinit
 ```
 sudo pacman -S zoxide
@@ -117,59 +134,59 @@ rm ~/.config/starship.toml
 ### Symbolic File Links
 
 ```
-ln -s ~/Documents/Dots-laptop/.zshrc ~/.zshrc
+ln -s ~/Documents/Dots/.zshrc ~/
 
-ln -s ~/Documents/Dots-laptop/.wezterm.lua ~/.wezterm.lua
+ln -s ~/Documents/Dots/.wezterm.lua ~/
 
-ln -s ~/Documents/Dots-laptop/fastfetch/config.jsonc ~/.config/fastfetch
+ln -s ~/Documents/Dots/fastfetch/config.jsonc ~/.config/fastfetch/
 
-ln -s ~/Documents/Dots-laptop/ohmyposh/Nord-v2.json ~/.config/ohmyposh/
+ln -s ~/Documents/Dots/ohmyposh/Nord-v2.json ~/.config/ohmyposh/
 
 
 ```
 #### nvim-main
 ```
 
-ln -s ~/Documents/Dots-laptop/nvim/.neoconf.json  ~/.config/nvim/
+ln -s ~/Documents/Dots/nvim/.neoconf.json  ~/.config/nvim/
 
-ln -s ~/Documents/Dots-laptop/nvim/init.lua  ~/.config/nvim/
+ln -s ~/Documents/Dots/nvim/init.lua  ~/.config/nvim/
 
-ln -s ~/Documents/Dots-laptop/nvim/lazy-lock.json  ~/.config/nvim/
+ln -s ~/Documents/Dots/nvim/lazy-lock.json  ~/.config/nvim/
 
-ln -s ~/Documents/Dots-laptop/nvim/lazyvim.json  ~/.config/nvim/
+ln -s ~/Documents/Dots/nvim/lazyvim.json  ~/.config/nvim/
 
-ln -s ~/Documents/Dots-laptop/nvim/LICENSE  ~/.config/nvim/
+ln -s ~/Documents/Dots/nvim/LICENSE  ~/.config/nvim/
 
-ln -s ~/Documents/Dots-laptop/nvim/README.md  ~/.config/nvim/
+ln -s ~/Documents/Dots/nvim/README.md  ~/.config/nvim/
 
-ln -s ~/Documents/Dots-laptop/nvim/stylua.toml  ~/.config/nvim/
+ln -s ~/Documents/Dots/nvim/stylua.toml  ~/.config/nvim/
 
 ```
 #### nvim-plugins
 
 ```
-ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/catppuccin.lua ~/.config/nvim/lua/plugins
+ln -s ~/Documents/Dots/nvim/lua/plugins/catppuccin.lua ~/.config/nvim/lua/plugins
 
-ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/golfNvim.lua ~/.config/nvim/lua/plugins
+ln -s ~/Documents/Dots/nvim/lua/plugins/golfNvim.lua ~/.config/nvim/lua/plugins
 
-ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/lsp.lua ~/.config/nvim/lua/plugins
+ln -s ~/Documents/Dots/nvim/lua/plugins/lsp.lua ~/.config/nvim/lua/plugins
 
-ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/lualine.lua ~/.config/nvim/lua/plugins
+ln -s ~/Documents/Dots/nvim/lua/plugins/lualine.lua ~/.config/nvim/lua/plugins
 
-ln -s ~/Documents/Dots-laptop/nvim/lua/plugins/platformio.lua ~/.config/nvim/lua/plugins
+ln -s ~/Documents/Dots/nvim/lua/plugins/platformio.lua ~/.config/nvim/lua/plugins
 
 ```
 
 #### nvim-config
 ```
 
-ln -s ~/Documents/Dots-laptop/nvim/lua/config/autocmds.lua ~/.config/nvim/lua/config
+ln -s ~/Documents/Dots/nvim/lua/config/autocmds.lua ~/.config/nvim/lua/config
 
-ln -s ~/Documents/Dots-laptop/nvim/lua/config/keymaps.lua ~/.config/nvim/lua/config
+ln -s ~/Documents/Dots/nvim/lua/config/keymaps.lua ~/.config/nvim/lua/config
 
-ln -s ~/Documents/Dots-laptop/nvim/lua/config/lazy.lua ~/.config/nvim/lua/config
+ln -s ~/Documents/Dots/nvim/lua/config/lazy.lua ~/.config/nvim/lua/config
 
-ln -s ~/Documents/Dots-laptop/nvim/lua/config/options.lua ~/.config/nvim/lua/config
+ln -s ~/Documents/Dots/nvim/lua/config/options.lua ~/.config/nvim/lua/config
 
 ```
 ### Github setup
