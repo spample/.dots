@@ -202,6 +202,12 @@ ln -s ~/Documents/Dots/nvim/lua/config/lazy.lua ~/.config/nvim/lua/config
 ln -s ~/Documents/Dots/nvim/lua/config/options.lua ~/.config/nvim/lua/config
 
 ```
+#### tmux-files
+```
+ln -s ~/Documents/Dots/tmux-files/.tmux ~/
+ln -s ~/Documents/Dots/tmux-files/.tmux.conf ~/
+
+```
 ### Github setup
 ```
 git config --global user.name spample
