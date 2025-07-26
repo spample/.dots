@@ -11,7 +11,7 @@ return {
 
 	window_background_opacity = 0.9, -- Adjust to your preference (0 = fully transparent, 1 = opaque)
 	text_background_opacity = 1.0, -- Keeps text background solid
-	enable_wayland = true, -- Optional: may help with transparency on X11-based setups
+	enable_wayland = false, -- Optional: may help with transparency on X11-based setups
 
 	--  Gradiant Background --
 
@@ -42,7 +42,7 @@ return {
 		top = 10,
 		bottom = 10,
 	},
-
+	--[[
 	window_frame = {
 		font_size = 9, -- Shrinks the tab bar text
 		border_left_width = 0,
@@ -55,7 +55,7 @@ return {
 		border_bottom_color = "#000000",
 		border_top_color = "#000000",
 	},
-
+]]
 	visual_bell = {
 		fade_in_function = "EaseIn",
 		fade_out_function = "EaseOut",
