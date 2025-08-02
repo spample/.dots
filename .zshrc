@@ -179,9 +179,12 @@ vi() {
 export PATH="$HOME/.platformio/penv/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export QT_QPA_PLATFORMTHEME=qt6ct
+export STEAM_FORCE_DESKTOPUI_SCALING=2
 
 
 export PATH="$PATH:$(go env GOPATH)/bin"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

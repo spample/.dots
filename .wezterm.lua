@@ -4,7 +4,7 @@ return {
 
 	--  Fonts --
 	font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium" }),
-	font_size = 12.0,
+	font_size = 8.0,
 	default_prog = { "/usr/bin/zsh" },
 
 	-- Transparency --

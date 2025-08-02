@@ -6,6 +6,8 @@ vim.cmd("set shiftwidth=2")
 
 vim.opt.termguicolors = true
 
+vim.opt.clipboard = "unnamedplus"
+
 require("config.lazy")
 
 require("platformio").setup({

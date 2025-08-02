@@ -233,6 +233,17 @@ ssh -T git@github.com
 ```
 
 
+### sddm
+```
+https://github.com/uiriansan/SilentSDDM
+```
+### Music
+```
 
-
-
+ln -s ~/.mydotfiles/com.ml4w.hyprlandstarter/.config/music/mpd/mpd.conf  ~/.config/mpd/
+```
+```
+sudo pacman -S timidity++
+sudo mkdir -p /etc/timidity
+sudo cp /usr/share/timidity/timidity.cfg /etc/timidity/
+```
