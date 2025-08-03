@@ -118,8 +118,8 @@ zinit ice wait lucid
 zinit light junegunn/fzf
 
 # you-should-use
-zinit ice wait lucid
-zinit light MichaelAquilina/zsh-you-should-use
+#zinit ice wait lucid
+#zinit light MichaelAquilina/zsh-you-should-use
 
 # Oh My Zsh plugin snippets (lazy loaded)
 zinit ice wait lucid
