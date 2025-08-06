@@ -1,0 +1,32 @@
+{
+    "layer": "top",
+    "margin-top": 14,
+    "margin-bottom": 0,
+    "margin-left": 14,
+    "margin-right": 14,    
+    "spacing": 0,
+    "position": "top",
+
+    // Load Modules
+    "include": [
+        "$HOME/.config/waybar/modules.json",
+        "$HOME/.config/hypr-stuff/settings/waybar-quicklinks.json"
+    ],
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "network", 
+        "bluetooth",
+        "pulseaudio", 
+        "keyboard-state", 
+        "battery", 
+        "tray",
+        "custom/notification",
+        "clock",
+        "custom/exit"
+    ]
+}

@@ -1,6 +1,5 @@
 #   Instructions
 
-
 ### Update packages
 ```
 sudo pacman -Syu
@@ -9,7 +8,7 @@ sudo pacman -Syu
 ### Create your fonts directory
 
 ```
-mkdir -p ~/.local/share/fonts
+mkdir -p $HOME/.local/share/fonts
 ```
 
 ### Download the font directly from the Nerd Fonts project
@@ -22,7 +21,7 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.z
 sudo pacman -S unzip
 ```
 ```
-unzip /tmp/FiraCode.zip -d ~/.local/share/fonts/FiraCode
+unzip /tmp/FiraCode.zip -d $HOME/.local/share/fonts/FiraCode
 ```
 
 ### Refresh the font cache
@@ -36,10 +35,10 @@ fc-list | grep "FiraCode Nerd Font Mono"
 ```
 
 ### if you want more fonts, run this
-### makes github dir
+### makes github directory
 ```
-mkdir -p ~/Documents/github
-cd ~/Documents/github
+mkdir -p $HOME/Documents/github
+cd $HOME/Documents/github
 ```
 
 ### Installs font bulk download & downloads it ~2-3 GB!
@@ -51,7 +50,7 @@ cd nerd-fonts
 ./install.sh
 ```
 
-#all## Refresh the font cache
+### Refresh the font cache
 ```
 fc-cache -fv
 ```
@@ -59,10 +58,6 @@ fc-cache -fv
 ### installing FastFetch
 ```
 sudo pacman -S fastfetch
-
-fastfetch --gen-config
-
-rm ~/.config/fastfetch/config.jsonc
 ```
 
 ### Installing yay
@@ -74,7 +69,7 @@ sudo pacman -Syu
 sudo pacman -S --needed git base-devel
 ```
 ```
-cd ~/Documents/github
+cd $HOME/Documents/github
 git clone https://aur.archlinux.org/yay.git
 ```
 ```
@@ -109,104 +104,72 @@ yay -S oh-my-posh
 sudo pacman -S zoxide
 ```
 ```
-git clone https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit/zinit.git
+git clone https://github.com/zdharma-continuum/zinit.git $HOME/.local/share/zinit/zinit.git
 ```
 ```
 source "${HOME}/.local/share/zinit/zinit.git/zinit.zsh"
 ```
 ```
-source ~/.zshrc
+source $HOME/.zshrc
 ```
 
 ### Removing files to make links later
 ```
-rm ~/.bashrc
-rm ~/.bash_history
-rm ~/.bash_logout
-rm ~/.bash_profile
-rm ~/.config/starship.toml
+rm $HOME/.bashrc
+rm $HOME/.bash_history
+rm $HOME/.bash_logout
+rm $HOME/.bash_profile
+rm $HOME/.config/starship.toml
+rm $HOME/.wezterm.lua
+rm $HOME/.zshrc
 
-rm ~/.wezterm.lua
-rm ~/.config/fastfetch/config.jsonc
-rm ~/.zshrc
+rm  -rf $HOME/.config/kitty
+rm  -rf $HOME/.config/nvim
+rm  -rf $HOME/.config/hypr
+rm  -rf $HOME/.config/keyd
+rm  -rf $HOME/.config/mpd
+rm  -rf $HOME/.config/rmpc
+rm  -rf $HOME/.config/rofi
+rm  -rf $HOME/.config/swaync
+rm  -rf $HOME/.config/waybar
+rm  -rf $HOME/.config/wlogout
 
 ```
 
 ### Symbolic File Links
 
 ```
-ln -s ~/Documents/Dots/.zshrc ~/
+ln -s $HOME/.dots/.zshrc $HOME/
 
-ln -s ~/Documents/Dots/.wezterm.lua ~/
+ln -s $HOME/.dots/.tmux $HOME/
 
-ln -s ~/Documents/Dots/fastfetch/config.jsonc ~/.config/fastfetch/
+ln -s $HOME/.dots/.tmux.conf $HOME/
 
-ln -s ~/Documents/Dots/ohmyposh/Nord-v2.json ~/.config/ohmyposh/
+ln -s $HOME/.dots/.config/fastfetch $HOME/.config/
 
+ln -s $HOME/.dots/.config/ohmyposh $HOME/.config/
 
-```
-#### nvim-directories
+ln -s $HOME/.dots/.config/nvim $HOME/.config/
 
-```
-mkdir -p ~/.config/nvim
+ln -s $HOME/.dots/.config/hypr $HOME/.config/
 
-mkdir -p ~/.config/nvim/lua
+ln -s $HOME/.dots/.config/hypr-stuff $HOME/.config/
 
-mkdir -p ~/.config/nvim/lua/plugins
+ln -s $HOME/.dots/.config/keyd $HOME/.config/
 
-mkdir -p ~/.config/nvim/lua/config
+ln -s $HOME/.dots/.config/kitty $HOME/.config/
 
-```
-#### nvim-main
-```
+ln -s $HOME/.dots/.config/mpd $HOME/.config/
 
-ln -s ~/Documents/Dots/nvim/.neoconf.json  ~/.config/nvim/
+ln -s $HOME/.dots/.config/rmpc $HOME/.config/
 
-ln -s ~/Documents/Dots/nvim/init.lua  ~/.config/nvim/
+ln -s $HOME/.dots/.config/rofi $HOME/.config/
 
-ln -s ~/Documents/Dots/nvim/lazy-lock.json  ~/.config/nvim/
+ln -s $HOME/.dots/.config/swaync $HOME/.config/
 
-ln -s ~/Documents/Dots/nvim/lazyvim.json  ~/.config/nvim/
+ln -s $HOME/.dots/.config/waybar $HOME/.config/
 
-ln -s ~/Documents/Dots/nvim/LICENSE  ~/.config/nvim/
-
-ln -s ~/Documents/Dots/nvim/README.md  ~/.config/nvim/
-
-ln -s ~/Documents/Dots/nvim/stylua.toml  ~/.config/nvim/
-
-```
-#### nvim-plugins
-
-```
-ln -s ~/Documents/Dots/nvim/lua/plugins/catppuccin.lua ~/.config/nvim/lua/plugins
-
-ln -s ~/Documents/Dots/nvim/lua/plugins/golfNvim.lua ~/.config/nvim/lua/plugins
-
-ln -s ~/Documents/Dots/nvim/lua/plugins/lsp.lua ~/.config/nvim/lua/plugins
-
-ln -s ~/Documents/Dots/nvim/lua/plugins/lualine.lua ~/.config/nvim/lua/plugins
-
-ln -s ~/Documents/Dots/nvim/lua/plugins/platformio.lua ~/.config/nvim/lua/plugins
-
-```
-
-#### nvim-config
-```
-
-ln -s ~/Documents/Dots/nvim/lua/config/autocmds.lua ~/.config/nvim/lua/config
-
-ln -s ~/Documents/Dots/nvim/lua/config/keymaps.lua ~/.config/nvim/lua/config
-
-ln -s ~/Documents/Dots/nvim/lua/config/lazy.lua ~/.config/nvim/lua/config
-
-ln -s ~/Documents/Dots/nvim/lua/config/options.lua ~/.config/nvim/lua/config
-
-```
-#### tmux-files
-```
-ln -s ~/Documents/Dots/tmux-files/.tmux ~/
-ln -s ~/Documents/Dots/tmux-files/.tmux.conf ~/
-
+ln -s $HOME/.dots/.config/wlogout $HOME/.config/
 ```
 ### Github setup
 ```
@@ -226,22 +189,16 @@ eval "$(ssh-agent -s)"
 ssh-keygen -t ed25519 -C luis.antonio.gonzalez501@gmail.com
 ```
 ```
-xclip -selection clipboard ~/.ssh/id_ed25519.pub 
+xclip -selection clipboard $HOME/.ssh/id_ed25519.pub 
 ```
 ```
 ssh -T git@github.com
 ```
-
-
 ### sddm
 ```
 https://github.com/uiriansan/SilentSDDM
 ```
 ### Music
-```
-
-ln -s ~/.mydotfiles/com.ml4w.hyprlandstarter/.config/music/mpd/mpd.conf  ~/.config/mpd/
-```
 ```
 sudo pacman -S timidity++
 sudo mkdir -p /etc/timidity
