@@ -204,3 +204,15 @@ sudo pacman -S timidity++
 sudo mkdir -p /etc/timidity
 sudo cp /usr/share/timidity/timidity.cfg /etc/timidity/
 ```
+
+
+
+
+# Stow:
+```
+sudo pacman -S --needed stow
+```
+
+then run `stow .` from the dots directory
+
+make sure to have the dots on the home directory
