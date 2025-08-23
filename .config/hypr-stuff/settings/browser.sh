@@ -1,2 +1,1 @@
-zen
-
+zen-browser
