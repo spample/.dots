@@ -318,8 +318,8 @@ sudo mv Nordic /usr/share/themes/
 ### apps I use
 
 ```
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev
 ```
 ```
-yay -S wlogout
+yay -S wlogout hyprshot
 ```
