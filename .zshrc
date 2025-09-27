@@ -34,6 +34,8 @@ add-zsh-hook precmd save_history_to_file
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
+alias clear='clear && fastfetch'
+
 
 alias docker-clean=' \
   docker container prune -f ; \
