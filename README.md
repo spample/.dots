@@ -332,3 +332,8 @@ yay -S wlogout hyprshot
 ```
 exec-once = wl-clip-persist —clipboard regular
 ```
+
+# ToDo
+- [ ] Add kvantum/qt6ct setup
+- [ ] Add kvantum folder
+- [ ] review clipboard section
