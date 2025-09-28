@@ -90,7 +90,7 @@ chsh -s /bin/zsh
 #### ohmyzsh
 
 ```
-sh -c "$curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 #### ohmyposh
@@ -223,7 +223,7 @@ sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 
 ```
 sudo sddm --example-config | sudo tee /etc/sddm.conf > /dev/null
-
+sudo mkdir -p /etc/sddm.conf.d
 ```
 ```
 [Theme]
@@ -263,11 +263,11 @@ QtVersion=6
 copy the mp4 file to the background folder
 
 ```
-sudo cp ~/.dots/misc/man-with-jellyfish-in-space.mp4 /usr/share/sddm/themes/sddm-astronaut-theme/background/
+sudo cp ~/.dots/misc/man-with-jellyfish-in-space.mp4 /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds/
 ```
 copy the conf file into the themes
 ```
-sudo cp ~/dots/misc/man-with-jelly.conf /usr/share/sddm/themes/sddm-astronaut-theme/Themes/
+sudo cp ~/.dots/misc/man-with-jelly.conf /usr/share/sddm/themes/sddm-astronaut-theme/Themes/
 ```
 to Test theme use 
 ```
@@ -282,6 +282,7 @@ sudo cp /usr/share/timidity/timidity.cfg /etc/timidity/
 ##  keyd installation
 
 ```
+cd ~/Documents/github
 git clone https://github.com/rvaiya/keyd
 cd keyd
 make && sudo make install
@@ -318,8 +319,16 @@ sudo mv Nordic /usr/share/themes/
 ### apps I use
 
 ```
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum
 ```
 ```
 yay -S wlogout hyprshot
+```
+
+
+
+## clipboard
+
+```
+exec-once = wl-clip-persist —clipboard regular
 ```
