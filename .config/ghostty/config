@@ -6,29 +6,36 @@
 #░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░     
 # ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░     
 
+
 font-family = FiraCode Nerd Font Mono
 font-family-bold = ""
 font-family-italic = ""
 font-family-bold-italic = ""
 
-# Window decoration mode
+# Window decoration
 window-decoration = none
 
-# background
+# Background
 background-image = /home/spample/.dots/gradiant-folder/purple-gradient.png
 background-image-fit = stretch
-
-# Opacity / transparency
 background-opacity = 0.8
 
-# Scroll / wheel behavior
+# Scroll behavior
 mouse-scroll-multiplier = 1
 scrollback-limit = 2000
 
 # Cursor
 cursor-style = block
-cursor-color = #ffffff
+cursor-color = #c0caf5
 cursor-style-blink = true
 
-# Shell / command
+# Foreground (text) color
+foreground = #c0caf5
+
+# Selection colors
+selection-background = #44475a
+selection-foreground = #f8f8f2
+
+# Shell
 command = /usr/bin/zsh
+
