@@ -294,9 +294,6 @@ symlink into system shortcuts
 sudo ln -s ~/.dots/.config/keyd/default.conf /etc/keyd/
 ```
 
-
-
-
 # Stow:
 ```
 sudo pacman -S --needed stow
