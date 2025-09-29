@@ -347,26 +347,11 @@ sudo pacman -S --needed ufw
 ```
 sudo ufw allow 22/tcp
 ```
-## clipboard
-
-```
-exec-once = wl-clip-persist —clipboard regular
-```
 ##  PlatformIO
 ```
 curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
 python3 get-platformio.py
 ```
-##  Kvantum stuff
-- Create a Kvantum symlink
-```
-ln -s /home/spample/.dots/misc/Kvanthum/ /home/spample/Documents/
-```
-- Go to Kvantum Manager application and install the Nordic Darker Theme inside the Kvantum folder
-- Apply the theme in Kvantum manager
-
-
-
 - change directory to the folder where is located downloaded "get-platformio.py"
 ```
 cd /path-to-dir/where/get-platformio.py/is-located
@@ -375,9 +360,12 @@ cd /path-to-dir/where/get-platformio.py/is-located
 ```
 python get-platformio.py
 ```
+##  Kvantum stuff
+- Create a Kvantum symlink
+```
+ln -s /home/spample/.dots/misc/Kvanthum/ /home/spample/Documents/
+```
+- Go to Kvantum Manager application and install the Nordic Darker Theme inside the Kvantum folder
+- Apply the theme in Kvantum manager
+- go into the qt6ct app and also select dark Kvantum
 
-# ToDo
-- [ ] Add kvantum/qt6ct setup
-- [ ] Add kvantum folder
-- [ ] review clipboard section
-- [ ] platformIO installation
