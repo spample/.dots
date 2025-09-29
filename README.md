@@ -366,3 +366,7 @@ ln -s /home/spample/.dots/misc/Kvanthum/ /home/spample/Documents/
 - Apply the theme in Kvantum manager
 - go into the qt6ct app and also select dark Kvantum
 
+
+
+# ToDo
+- [ ] organize README
