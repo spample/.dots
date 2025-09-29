@@ -347,11 +347,24 @@ sudo pacman -S --needed ufw
 ```
 sudo ufw allow 22/tcp
 ```
-
 ## clipboard
 
 ```
 exec-once = wl-clip-persist —clipboard regular
+```
+##  platformIO
+```
+curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
+python3 get-platformio.py
+```
+
+### change directory to the folder where is located downloaded "get-platformio.py"
+```
+cd /path-to-dir/where/get-platformio.py/is-located
+```
+### run it
+```
+python get-platformio.py
 ```
 
 # ToDo
