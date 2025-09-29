@@ -319,13 +319,34 @@ sudo mv Nordic /usr/share/themes/
 ### apps I use
 
 ```
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet
 ```
 ```
 yay -S wlogout hyprshot
 ```
 
-
+### systems stuff
+```
+sudo systemctl enable --now NetworkManager
+nm-applet --indicator &
+```
+### OpenSSH
+####  install OpenSSH
+```
+sudo pacman -S --needed openssh
+```
+####  Start SSH daemon
+```
+sudo systemctl start sshd
+sudo systemctl enable sshd
+```
+####  allow port
+```
+sudo pacman -S --needed ufw
+```
+```
+sudo ufw allow 22/tcp
+```
 
 ## clipboard
 
@@ -337,3 +358,4 @@ exec-once = wl-clip-persist —clipboard regular
 - [ ] Add kvantum/qt6ct setup
 - [ ] Add kvantum folder
 - [ ] review clipboard section
+- [ ] platformIO installation
