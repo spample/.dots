@@ -316,10 +316,10 @@ sudo mv Nordic /usr/share/themes/
 ### apps I use
 
 ```
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick 
 ```
 ```
-yay -S wlogout hyprshot
+yay -S wlogout hyprshot gimp-plugin-resynthesizer
 ```
 
 ### systems stuff

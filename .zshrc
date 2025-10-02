@@ -103,14 +103,23 @@ cd() {
 #  ZINIT PLUGINS (LAZY LOADING)
 #######################################
 
-# Autosuggestions (immediate)
+# Autosuggestions
 zinit ice lucid
 zinit light zsh-users/zsh-autosuggestions
 
-# Syntax highlighting (must be last, lazy OK)
-zinit ice lucid wait'1'
-zinit light zsh-users/zsh-syntax-highlighting
+# Syntax highlighting (must be last)
+zinit ice lucid wait'1' atload'
+    typeset -gA ZSH_HIGHLIGHT_STYLES
+    ZSH_HIGHLIGHT_STYLES[command]="fg=#6fcc3d,bold"
+    ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=#cc3d3d,bold"
+    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]="fg=#d0d18a"
+    ZSH_HIGHLIGHT_STYLES[double-quoted-argument]="fg=#3bdb96"
+    ZSH_HIGHLIGHT_STYLES[precommand]="fg=#6fcc3d"
+    ZSH_HIGHLIGHT_STYLES[hashed-command]="fg=#9e6cad"
 
+
+'
+zinit light zsh-users/zsh-syntax-highlighting
 # zoxide
 zinit ice wait lucid
 zinit light ajeetdsouza/zoxide
@@ -195,4 +204,3 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-

@@ -133,7 +133,7 @@
             "cache_duration": "none"
           },
           "template": "\u2570\u2500",
-          "foreground": "#ECEFF4",
+          "foreground": "#B48EAD",
           "type": "text",
           "style": "plain"
         },

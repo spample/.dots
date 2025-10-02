@@ -6,14 +6,18 @@
 #░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░     
 # ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░     
 
-
+# Font stuff
 font-family = FiraCode Nerd Font Mono
 font-family-bold = ""
 font-family-italic = ""
 font-family-bold-italic = ""
 
+# Theme
+#theme = /home/spample/.dots/.config/ghostty/themes/tokyonight.conf
+
 # Window decoration
 window-decoration = none
+
 
 # Background
 background-image = /home/spample/.dots/gradiant-folder/purple-gradient.png

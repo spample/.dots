@@ -4,18 +4,16 @@
     "type": "file",
     "source": "/home/spample/.dots/ASCII-folder/MH-emblem",
     "color": {
-      "1": "red"
+      "1": "#fa3250"
     },
     "padding": {
       "top": 1
     }
   },
-
   // Display formatting
   "display": {
     "separator": " 󰑃  " // Icon to separate keys from values
   },
-
   // Main visual modules
   "modules": [
     // 🌈 Top Rainbow Bar
@@ -23,45 +21,121 @@
       "type": "custom",
       "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m"
     },
-
     // 🖥️ OS and Packages
-    { "type": "os",         "key": " DISTRO",              "keyColor": "yellow" },
-    
-    { "type": "kernel",     "key": "│ ┌ Kernel",            "keyColor": "yellow" },
-    { "type": "packages",   "key": "│ ├󰏖 Packages",         "keyColor": "yellow" },
-    { "type": "command",    "key": "│ ├ Installed Since",  "keyColor": "yellow",   "text": "birth=$(stat -c %W / 2>/dev/null); [ \"$birth\" -eq 0 ] && echo unknown || echo $(( ($(date +%s) - birth) / 86400 )) days"},
-    { "type": "shell",      "key": "│ └ Shell",            "keyColor": "yellow" },
-
+    {
+      "type": "os",
+      "key": " DISTRO",
+      "keyColor": "#f6ff45"
+    },
+    {
+      "type": "kernel",
+      "key": "│ ┌ Kernel",
+      "keyColor": "#f6ff45"
+    },
+    {
+      "type": "packages",
+      "key": "│ ├󰏖 Packages",
+      "keyColor": "#f6ff45"
+    },
+    {
+      "type": "command",
+      "key": "│ ├ Installed Since",
+      "keyColor": "#f6ff45",
+      "text": "birth=$(stat -c %W / 2>/dev/null); [ \"$birth\" -eq 0 ] && echo unknown || echo $(( ($(date +%s) - birth) / 86400 )) days"
+    },
+    {
+      "type": "shell",
+      "key": "│ └ Shell",
+      "keyColor": "#f6ff45"
+    },
     "break",
-
     // 🪟 Desktop and Appearance
-    { "type": "wm",           "key": " DE/WM",         "keyColor": "blue" },
-
-    { "type": "wmtheme",      "key": "│ ┌󰉼 Theme",      "keyColor": "blue" },
-    { "type": "icons",        "key": "│ ├󰀻 Icons",      "keyColor": "blue" },
-    { "type": "terminalfont", "key": "│ ├🗚 Term Font",   "keyColor": "blue" },
-    { "type": "terminal",     "key": "│ ├ Terminal",   "keyColor": "blue" },
-    { "type": "command",      "key": "│ ├ Git User",   "keyColor": "blue",   "text": "git config --global user.name || echo 'N/A'"},
-    { "type": "command",      "key": "│ └ Website",      "keyColor": "blue",   "text": "echo https://spample.github.io/"},
-
+    {
+      "type": "wm",
+      "key": " DE/WM",
+      "keyColor": "#334eff"
+    },
+    {
+      "type": "wmtheme",
+      "key": "│ ┌󰉼 Theme",
+      "keyColor": "#334eff"
+    },
+    {
+      "type": "icons",
+      "key": "│ ├󰀻 Icons",
+      "keyColor": "#334eff"
+    },
+    {
+      "type": "terminalfont",
+      "key": "│ ├🗚 Term Font",
+      "keyColor": "#334eff"
+    },
+    {
+      "type": "terminal",
+      "key": "│ ├ Terminal",
+      "keyColor": "#334eff"
+    },
+    {
+      "type": "command",
+      "key": "│ ├ Git User",
+      "keyColor": "#334eff",
+      "text": "git config --global user.name || echo 'N/A'"
+    },
+    {
+      "type": "command",
+      "key": "│ └ Website",
+      "keyColor": "#334eff",
+      "text": "echo https://spample.github.io/"
+    },
     "break",
-
     // 🧠 Hardware Info
-    { "type": "host",       "key": "󰌢 SYSTEM",          "keyColor": "green" },
-
-    { "type": "cpu",        "key": "│ ┌󰻠 CPU",           "keyColor": "green" },
-    { "type": "gpu",        "key": "│ ├󰻑 GPU",           "format": "{2}",        "keyColor": "green" },
-    { "type": "display",    "key": "│ ├󰍹 Display",       "keyColor": "green",    "compactType": "original-with-refresh-rate" },
-    { "type": "memory",     "key": "│ ├󰾆 Memory",        "keyColor": "green" },
-    { "type": "uptime",     "key": "│ ├ Uptime",        "keyColor": "green" },
-    { "type": "command",    "key": "│ ├󰓡 IP",            "keyColor": "green",     "text": "hostname -I | awk '{print $1}'"},
-    { "type": "battery",    "key": "│ └ Battery",       "keyColor": "green" },
-
+    {
+      "type": "host",
+      "key": "󰌢 SYSTEM",
+      "keyColor": "#32fa3c"
+    },
+    {
+      "type": "cpu",
+      "key": "│ ┌󰻠 CPU",
+      "keyColor": "#32fa3c"
+    },
+    {
+      "type": "gpu",
+      "key": "│ ├󰻑 GPU",
+      "format": "{2}",
+      "keyColor": "#32fa3c"
+    },
+    {
+      "type": "display",
+      "key": "│ ├󰍹 Display",
+      "keyColor": "#32fa3c",
+      "compactType": "original-with-refresh-rate"
+    },
+    {
+      "type": "memory",
+      "key": "│ ├󰾆 Memory",
+      "keyColor": "#32fa3c"
+    },
+    {
+      "type": "uptime",
+      "key": "│ ├ Uptime",
+      "keyColor": "#32fa3c"
+    },
+    {
+      "type": "command",
+      "key": "│ ├󰓡 IP",
+      "keyColor": "#32fa3c",
+      "text": "hostname -I | awk '{print $1}'"
+    },
+    {
+      "type": "battery",
+      "key": "│ └ Battery",
+      "keyColor": "#32fa3c"
+    },
     // 🌈 Bottom Rainbow Bar
     {
       "type": "custom",
       "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m"
     }
-
   ]
 }
