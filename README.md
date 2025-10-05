@@ -133,7 +133,7 @@ rm  -rf $HOME/.config/rofi
 rm  -rf $HOME/.config/swaync
 rm  -rf $HOME/.config/waybar
 rm  -rf $HOME/.config/wlogout
-
+sudo rm /etc/systemd/logind.conf
 ```
 
 ### Symbolic File Links
@@ -316,12 +316,19 @@ sudo mv Nordic /usr/share/themes/
 ### apps I use
 
 ```
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick 
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang
 ```
 ```
 yay -S wlogout hyprshot gimp-plugin-resynthesizer
 ```
-
+### nvm thingy
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+```
+### Sleep timer to 30 min
+```
+sudo ln -s $HOME/.dots/misc/logind.conf /etc/systemd/logind.conf
+```
 ### systems stuff
 ```
 sudo systemctl enable --now NetworkManager
