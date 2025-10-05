@@ -316,18 +316,28 @@ sudo mv Nordic /usr/share/themes/
 ### apps I use
 
 ```
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker
 ```
 ```
 yay -S wlogout hyprshot gimp-plugin-resynthesizer
 ```
+
+### docker
+```
+sudo systemctl enable docker.service
+sudo systemctl enable docker.socket
+```
+```
+sudo systemctl start docker.socket
+sudo systemctl start docker.service
+```
+```
+sudo usermod -aG docker $USER
+```
+
 ### nvm thingy
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-```
-### Sleep timer to 30 min
-```
-sudo ln -s $HOME/.dots/misc/logind.conf /etc/systemd/logind.conf
 ```
 ### systems stuff
 ```
