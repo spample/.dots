@@ -1,72 +1,9 @@
 #   Instructions
-
 ### Update packages
-```
-```
-
-### Create your fonts directory
-
-```
-mkdir -p $HOME/.local/share/fonts
-```
-
-### Download the font directly from the Nerd Fonts project
-```
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip -O /tmp/FiraCode.zip
-```
-
-### Unzip
-```
-sudo pacman -S unzip
-```
-```
-unzip /tmp/FiraCode.zip -d $HOME/.local/share/fonts/FiraCode
-```
-
-### Refresh the font cache
-```
-fc-cache -fv
-```
-
-### Verify the font is installed
-```
-fc-list | grep "FiraCode Nerd Font Mono"
-```
-
-### if you want more fonts, run this
-### makes github directory
-```
-mkdir -p $HOME/Documents/github
-cd $HOME/Documents/github
-```
-
-### Installs font bulk download & downloads it ~2-3 GB!
-```
-git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
-
-cd nerd-fonts
-
-./install.sh
-```
-
-### Refresh the font cache
-```
-fc-cache -fv
-```
-
-### installing FastFetch
-```
-sudo pacman -S fastfetch
-```
-
-### Installing yay
-
 ```
 sudo pacman -Syu
 ```
-```
-sudo pacman -S --needed git base-devel
-```
+### Installing yay
 ```
 cd $HOME/Documents/github
 git clone https://aur.archlinux.org/yay.git
@@ -75,9 +12,49 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si 
 ```
+### apps I use
+```
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang dockern xorg-xhost ufw openssh unzip git base-devel fastfetch stow
+```
+### Create your fonts directory
+```
+mkdir -p $HOME/.local/share/fonts
+```
+### Download the font directly from the Nerd Fonts project
+```
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip -O /tmp/FiraCode.zip
+```
+### Unzip
+```
+unzip /tmp/FiraCode.zip -d $HOME/.local/share/fonts/FiraCode
+```
+### Refresh the font cache
+```
+fc-cache -fv
+```
+### Verify the font is installed
+```
+fc-list | grep "FiraCode Nerd Font Mono"
+```
+### if you want more fonts, run this
+### makes github directory
+```
+mkdir -p $HOME/Documents/github
+cd $HOME/Documents/github
+```
+### Installs font bulk download & downloads it ~2-3 GB!
+```
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
 
+cd nerd-fonts
+
+./install.sh
+```
+### Refresh the font cache
+```
+fc-cache -fv
+```
 ### Installing Zsh, ohmyzsh, ohmyposh, zinit
-
 #### Zsh
 ```
 sudo pacman -S zsh
@@ -197,29 +174,19 @@ ssh -T git@github.com
 ```
 https://github.com/uiriansan/SilentSDDM
 ```
-
 ```
 yay -S sddm-silent-theme
 ```
-
-
-
-
-
 ```
 sudo pacman -S --needed sddm qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg
 ```
-
 ```
 sudo git clone -b master --depth 1 https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
 ```
-
 ```
 sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 ```
-
 ####  If you dont have a sddm.conf in /etc/
-
 ```
 sudo sddm --example-config | sudo tee /etc/sddm.conf > /dev/null
 sudo mkdir -p /etc/sddm.conf.d
@@ -228,7 +195,6 @@ sudo mkdir -p /etc/sddm.conf.d
 [Theme]
 Current=sddm-astronaut-theme``
 ```
-
 ```
 sudo -e /etc/sddm.conf.d/virtualkbd.conf
 ```
@@ -258,9 +224,7 @@ Theme-Id=sddm-astronaut-theme
 Theme-API=2.0
 QtVersion=6
 ```
-
 copy the mp4 file to the background folder
-
 ```
 sudo cp ~/.dots/misc/man-with-jellyfish-in-space.mp4 /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds/
 ```
@@ -279,7 +243,6 @@ sudo mkdir -p /etc/timidity
 sudo cp /usr/share/timidity/timidity.cfg /etc/timidity/
 ```
 ##  keyd installation
-
 ```
 cd ~/Documents/github
 git clone https://github.com/rvaiya/keyd
@@ -288,22 +251,14 @@ make && sudo make install
 sudo systemctl enable --now keyd
 ```
 symlink into system shortcuts
-
 ```
 sudo ln -s ~/.dots/.config/keyd/default.conf /etc/keyd/
 ```
-
 # Stow:
-```
-sudo pacman -S --needed stow
-```
-
 then run `stow .` from the dots directory
 
 make sure to have the dots on the home directory
-
 ## GTK Theme
-
 ```
 mkdir -p ~/.themes
 cd ~/.themes
@@ -312,15 +267,10 @@ git clone https://github.com/EliverLara/Nordic.git
 ```
 sudo mv Nordic /usr/share/themes/
 ```
-### apps I use
 
 ```
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang dockern xorg-xhost noto-fonts-emoji usbutils
+yay -S wlogout hyprshot gimp-plugin-resynthesizer
 ```
-```
-yay -S wlogout hyprshot gimp-plugin-resynthesizer docker-buildx
-```
-
 ### docker
 ```
 sudo systemctl enable docker.service
@@ -333,7 +283,6 @@ sudo systemctl start docker.service
 ```
 sudo usermod -aG docker $USER
 ```
-
 ### nvm thingy
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
@@ -344,19 +293,12 @@ sudo systemctl enable --now NetworkManager
 nm-applet --indicator &
 ```
 ### OpenSSH
-####  install OpenSSH
-```
-sudo pacman -S --needed openssh
-```
 ####  Start SSH daemon
 ```
 sudo systemctl start sshd
 sudo systemctl enable sshd
 ```
 ####  allow port
-```
-sudo pacman -S --needed ufw
-```
 ```
 sudo ufw allow 22/tcp
 ```
@@ -381,9 +323,5 @@ ln -s /home/spample/.dots/misc/Kvanthum/ /home/spample/Documents/
 - Go to Kvantum Manager application and install the Nordic Darker Theme inside the Kvantum folder
 - Apply the theme in Kvantum manager
 - go into the qt6ct app and also select dark Kvantum
-
-
-
 # ToDo
 - [ ] organize README
-- [ ] Get docker buildx to work nicely out the box

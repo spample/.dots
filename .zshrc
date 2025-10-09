@@ -227,9 +227,6 @@ bindkey "^[[3;3~" kill-word
 export XCURSOR_THEME=Nordic-cursors
 export XCURSOR_SIZE=36
 export SUDO_EDITOR=nvim
-
-export SUDO_EDITOR=nvim
-
 # Smart edit command:
 vi() {
   if [[ "$1" == /* && ! -w "$1" && -f "$1" ]]; then
@@ -250,6 +247,9 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
+
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
