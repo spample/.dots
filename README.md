@@ -2,6 +2,7 @@
 
 ### Update packages
 ```
+sudo pacman -Syu
 ```
 
 ### Create your fonts directory
