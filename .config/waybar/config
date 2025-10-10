@@ -13,16 +13,17 @@
         "$HOME/.config/hypr-stuff/settings/waybar-quicklinks.json"
     ],
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/window"
+        
     ],
     "modules-right": [
         "network", 
         "bluetooth",
-        "pulseaudio", 
-        "keyboard-state", 
+        "pulseaudio",
+        "custom/brightness",
         "battery", 
         "tray",
         "custom/notification",

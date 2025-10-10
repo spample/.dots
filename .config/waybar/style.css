@@ -50,7 +50,8 @@
 #battery,
 #pulseaudio,
 #custom-lock,
-#custom-exit {
+#custom-exit,
+#custom-brightness {
   background-color: @surface0;
   padding: 2px 16px 2px 14px;
   margin: 0;
@@ -58,8 +59,8 @@
 
 #clock {
   color: @blue;
-  border-radius: 16px 16px 16px 16px;
-  margin-right: 16px;
+  border-radius: 0px 16px 16px 0px;
+  margin-right: 8px;
 }
 
 #battery {
@@ -85,11 +86,11 @@
 #bluetooth {
   color: @blue;
   border-radius: 0px 16px 16px 00px;
-  margin-right: 16px;
+  margin-right: 8px;
 }
 
 #network {
-  color: @yellow;
+  color: #c5a6ff;
   border-radius: 16px 0px 0px 16px;
   margin-right: 0px;
 }
@@ -114,6 +115,17 @@
   margin-right: 8px;
   border-radius: 0px 16px 16px 0px;
 }
+
 #custom-notification{
   color: @teal;
+  border-radius: 16px 0px 0px 16px;
+}
+
+#custom-brightness {
+  color: @yellow;
+  border-radius: 0px 0px 0px 0px;
+}
+
+#window {
+  margin-left: 20px
 }

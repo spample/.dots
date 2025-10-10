@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 HYPRLAND_DEVICE="dell0b99:00-06cb:ce81-touchpad"
 

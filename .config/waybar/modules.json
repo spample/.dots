@@ -16,7 +16,7 @@
    "format-icons": {
      "1": "",
      "2": "",
-     "3": "",
+     "3": "󰹕",
      "4": "",
      "5": "",
      "urgent": "",
@@ -32,27 +32,6 @@
    }
  },
 
- // Hyprland Window
- "hyprland/window": {
-     "rewrite": {
-         "(.*) - Brave": "$1",
-         "(.*) - Chromium": "$1",
-         "(.*) - Brave Search": "$1",
-         "(.*) - Outlook": "$1",
-         "(.*) Microsoft Teams": "$1"
-     },
-     "separate-outputs": true
- },
-
- // Rofi Application Launcher
- "custom/appmenu": {
-     "format": "Apps",
-     "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
-     "on-click": "rofi -show drun -replace",
-     "on-click-right": "$HOME/.config/hypr-stuff/scripts/keybindings.sh",
-     "tooltip": false
- },
-    
  // Power Menu
  "custom/exit": {
     "format": "",
@@ -256,6 +235,19 @@
       "on-click": "swaync-client -t -sw",
       "on-click-right": "swaync-client -d -sw",
       "escape": true
-    }
+    },
+
+    //brightness
+    "custom/brightness": {
+    "format": "{}",
+    "exec": "b=$(brightnessctl -m | cut -d, -f4 | tr -d '%'); if [ -z \"$b\" ]; then b=0; fi; if [ $b -le 20 ]; then icon='󰃞'; elif [ $b -le 60 ]; then icon='󰃟'; else icon='󰃠'; fi; echo \"$icon $b%\"",
+    "interval": 2,
+    "on-click": "brightnessctl set 10%+",
+    "on-click-right": "brightnessctl set 10%-",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "tooltip": false
+  }
+}
 
 }
