@@ -290,7 +290,7 @@ sudo mv Nordic /usr/share/themes/
 ### apps I use
 
 ```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang dockern xorg-xhost noto-fonts-emoji usbutils
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang dockern xorg-xhost noto-fonts-emoji usbutils libreoffice-fresh 
 ```
 ```bash
 yay -S wlogout hyprshot gimp-plugin-resynthesizer docker-buildx
