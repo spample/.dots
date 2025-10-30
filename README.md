@@ -4,6 +4,28 @@
 ```bash
 sudo pacman -Syu
 ```
+### Installing yay
+```bash
+cd $HOME/Documents/github
+git clone https://aur.archlinux.org/yay.git
+```
+```bash
+cd yay
+makepkg -si 
+```
+### apps I use
+```bash
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d virt-manager qemu-desktop edk2-ovmf
+```
+```bash
+yay -S wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager
+```
+### deamons
+```bash
+sudo systemctl enable --now libvirtd
+
+sudo usermod -aG libvirt $USER
+```
 ### Create your fonts directory
 ```bash
 mkdir -p $HOME/.local/share/fonts
@@ -13,9 +35,6 @@ mkdir -p $HOME/.local/share/fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip -O /tmp/FiraCode.zip
 ```
 ### Unzip
-```bash
-sudo pacman -S unzip
-```
 ```bash
 unzip /tmp/FiraCode.zip -d $HOME/.local/share/fonts/FiraCode
 ```
@@ -44,25 +63,6 @@ cd nerd-fonts
 ### Refresh the font cache
 ```bash
 fc-cache -fv
-```
-### installing FastFetch
-```bash
-sudo pacman -S fastfetch
-```
-### Installing yay
-```bash
-sudo pacman -Syu
-```
-```bash
-sudo pacman -S --needed git base-devel
-```
-```bash
-cd $HOME/Documents/github
-git clone https://aur.archlinux.org/yay.git
-```
-```bash
-cd yay
-makepkg -si 
 ```
 ### Installing Zsh, ohmyzsh, ohmyposh, zinit
 #### Zsh
@@ -115,6 +115,11 @@ rm  -rf $HOME/.config/waybar
 rm  -rf $HOME/.config/wlogout
 sudo rm /etc/systemd/logind.conf
 ```
+# Stow:
+run `stow .` from the dots directory
+
+make sure to have the dots on the home directory
+
 ### Symbolic File Links
 ```bash
 ln -s $HOME/.dots/.zshrc $HOME/
@@ -172,6 +177,82 @@ xclip -selection clipboard $HOME/.ssh/id_ed25519.pub
 ```bash
 ssh -T git@github.com
 ```
+##  keyd installation
+```bash
+cd ~/Documents/github
+git clone https://github.com/rvaiya/keyd
+cd keyd
+make && sudo make install
+sudo systemctl enable --now keyd
+```
+symlink into system shortcuts
+
+```bash
+sudo ln -s ~/.dots/.config/keyd/default.conf /etc/keyd/
+```
+## GTK Theme
+
+```bash
+mkdir -p ~/.themes
+cd ~/.themes
+git clone https://github.com/EliverLara/Nordic.git
+```
+```bash
+sudo mv Nordic /usr/share/themes/
+```
+### docker
+```bash
+sudo systemctl enable docker.service
+sudo systemctl enable docker.socket
+```
+```bash
+sudo systemctl start docker.socket
+sudo systemctl start docker.service
+```
+```bash
+sudo usermod -aG docker $USER
+```
+
+### nvm thingy
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+```
+### systems stuff
+```bash
+sudo systemctl enable --now NetworkManager
+nm-applet --indicator &
+```
+### OpenSSH
+####  Start SSH daemon
+```bash
+sudo systemctl start sshd
+sudo systemctl enable sshd
+```
+####  allow port
+```bash
+sudo ufw allow 22/tcp
+```
+##  PlatformIO
+```bash
+curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
+python3 get-platformio.py
+```
+- change directory to the folder where is located downloaded "get-platformio.py"
+```bash
+cd /path-to-dir/where/get-platformio.py/is-located
+```
+- run it
+```bash
+python get-platformio.py
+```
+##  Kvantum stuff
+- Create a Kvantum symlink
+```bash
+ln -s /home/spample/.dots/misc/Kvanthum/ /home/spample/Documents/
+```
+- Go to Kvantum Manager application and install the Nordic Darker Theme inside the Kvantum folder
+- Apply the theme in Kvantum manager
+- go into the qt6ct app and also select dark Kvantum
 ### sddm
 ```bash
 https://github.com/uiriansan/SilentSDDM
@@ -253,112 +334,9 @@ sudo pacman -S timidity++
 sudo mkdir -p /etc/timidity
 sudo cp /usr/share/timidity/timidity.cfg /etc/timidity/
 ```
-##  keyd installation
-
-```bash
-cd ~/Documents/github
-git clone https://github.com/rvaiya/keyd
-cd keyd
-make && sudo make install
-sudo systemctl enable --now keyd
-```
-symlink into system shortcuts
-
-```bash
-sudo ln -s ~/.dots/.config/keyd/default.conf /etc/keyd/
-```
-
-# Stow:
-```bash
-sudo pacman -S --needed stow
-```
-
-then run `stow .` from the dots directory
-
-make sure to have the dots on the home directory
-
-## GTK Theme
-
-```bash
-mkdir -p ~/.themes
-cd ~/.themes
-git clone https://github.com/EliverLara/Nordic.git
-```
-```bash
-sudo mv Nordic /usr/share/themes/
-```
-### apps I use
-
-```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang dockern xorg-xhost noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d 
-```
-```bash
-yay -S wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager
-```
-
-### docker
-```bash
-sudo systemctl enable docker.service
-sudo systemctl enable docker.socket
-```
-```bash
-sudo systemctl start docker.socket
-sudo systemctl start docker.service
-```
-```bash
-sudo usermod -aG docker $USER
-```
-
-### nvm thingy
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-```
-### systems stuff
-```bash
-sudo systemctl enable --now NetworkManager
-nm-applet --indicator &
-```
-### OpenSSH
-####  install OpenSSH
-```bash
-sudo pacman -S --needed openssh
-```
-####  Start SSH daemon
-```bash
-sudo systemctl start sshd
-sudo systemctl enable sshd
-```
-####  allow port
-```bash
-sudo pacman -S --needed ufw
-```
-```bash
-sudo ufw allow 22/tcp
-```
-##  PlatformIO
-```bash
-curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
-python3 get-platformio.py
-```
-- change directory to the folder where is located downloaded "get-platformio.py"
-```bash
-cd /path-to-dir/where/get-platformio.py/is-located
-```
-- run it
-```bash
-python get-platformio.py
-```
-##  Kvantum stuff
-- Create a Kvantum symlink
-```bash
-ln -s /home/spample/.dots/misc/Kvanthum/ /home/spample/Documents/
-```
-- Go to Kvantum Manager application and install the Nordic Darker Theme inside the Kvantum folder
-- Apply the theme in Kvantum manager
-- go into the qt6ct app and also select dark Kvantum
 
 
 
 # ToDo
 - [ ] organize README
-- [ ] Get docker buildx to work nicely out the box
+- [X] Get docker buildx to work nicely out the box
