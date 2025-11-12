@@ -35,6 +35,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias clear='clear && fastfetch'
+alias platio='source ~/.platformio/penv/bin/activate'
 
 # Example: pio-init Project-name --board uno
 pio-init() {
@@ -237,7 +238,7 @@ vi() {
   fi
 }
 
-export PATH="$HOME/.platformio/penv/bin:$PATH"
+#export PATH="$HOME/.platformio/penv/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export QT_QPA_PLATFORMTHEME=qt6ct
 export STEAM_FORCE_DESKTOPUI_SCALING=2
