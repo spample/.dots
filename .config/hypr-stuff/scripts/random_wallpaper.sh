@@ -10,6 +10,7 @@ WALL1=$(find "$DIR" -type f | shuf -n 1)
 cat > ~/.config/hypr/hyprpaper.conf <<EOF
 preload = $WALL1
 wallpaper = eDP-1,$WALL1
+wallpaper = HDMI-A-1,$WALL1
 EOF
 
 # Launch hyprpaper
