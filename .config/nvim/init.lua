@@ -11,7 +11,3 @@ vim.o.wrap = false
 vim.opt.clipboard = "unnamedplus"
 
 require("config.lazy")
-
-require("platformio").setup({
-  lsp = "clangd", -- or "ccls" if you prefer
-})
