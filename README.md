@@ -14,6 +14,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si 
 ```
+
 ### apps I use
 ```bash
 sudo pacman -S --needed neovim tmux nodejs-lts-iron npm clang xorg-xhost openssh unzip git base-devel fastfetch stow noto-fonts-emoji zip sl cmake wget wl-clip-persist
