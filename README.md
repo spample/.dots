@@ -1,4 +1,37 @@
 #   Instructions
+### WSL new user
+```bash
+pacman -Sy --needed sudo
+
+useradd -m -G wheel -s /bin/bash spample
+```
+#### Set new password
+```bash
+passwd spample
+```
+#### Allow wheel group to use sudo (uncomment this "%wheel ALL=(ALL) ALL")
+```bash
+EDITOR=nvim visudo
+```
+#### Switch to the new user
+```bash
+su - spample
+```
+#### Make WSL automatically log into the new user
+```bash
+nvim /etc/wsl.conf
+```
+add this next part
+```bash
+[user]
+default=spample
+```
+restart wsl in windows terminal
+```bash
+wsl --shutdown
+```
+
+---
 
 ### Update packages
 ```bash
