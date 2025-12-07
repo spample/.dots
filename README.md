@@ -145,6 +145,7 @@ run `stow .` from the dots directory
 
 make sure to have the dots on the home directory
 
+
 ### Github setup
 ```bash
 git config --global user.name spample
