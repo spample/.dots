@@ -155,6 +155,9 @@ git config --global user.email luis.antonio.gonzalez501@gmail.com
 ```bash
 git config --global init.defaultBranch main
 ```
+```bash
+git config --global credential.helper store
+```
 ### Github ssh setup
 ```bash
 eval "$(ssh-agent -s)"
