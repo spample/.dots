@@ -1,4 +1,4 @@
-#   Instructions
+# Dot files for my personal Arch/Sway Configuration
 
 ### Update packages
 ```bash
@@ -25,7 +25,7 @@ makepkg -si
 sudo pacman -S --needed waybar keyd mpd rmpc neovim swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs-lts-iron npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox discord kitty cmake
 ```
 ```bash
-yay -S gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin 
+yay -S --needed gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin 
 ```
 ### Create your fonts directory
 ```bash
