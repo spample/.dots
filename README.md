@@ -114,40 +114,6 @@ run `stow .` from the dots directory
 
 make sure to have the dots on the home directory
 
-### Symbolic File Links
-```bash
-ln -s $HOME/.dots/.zshrc $HOME/
-
-ln -s $HOME/.dots/.tmux $HOME/
-
-ln -s $HOME/.dots/.tmux.conf $HOME/
-
-ln -s $HOME/.dots/.config/fastfetch $HOME/.config/
-
-ln -s $HOME/.dots/.config/ohmyposh $HOME/.config/
-
-ln -s $HOME/.dots/.config/nvim $HOME/.config/
-
-ln -s $HOME/.dots/.config/hypr $HOME/.config/
-
-ln -s $HOME/.dots/.config/hypr-stuff $HOME/.config/
-
-ln -s $HOME/.dots/.config/keyd $HOME/.config/
-
-ln -s $HOME/.dots/.config/kitty $HOME/.config/
-
-ln -s $HOME/.dots/.config/mpd $HOME/.config/
-
-ln -s $HOME/.dots/.config/rmpc $HOME/.config/
-
-ln -s $HOME/.dots/.config/rofi $HOME/.config/
-
-ln -s $HOME/.dots/.config/swaync $HOME/.config/
-
-ln -s $HOME/.dots/.config/waybar $HOME/.config/
-
-ln -s $HOME/.dots/.config/wlogout $HOME/.config/
-```
 ### Github setup
 ```bash
 git config --global user.name spample
