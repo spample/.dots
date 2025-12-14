@@ -1,3 +1,3 @@
-source ~/.zshrc
-export PATH=$PATH:$HOME/.local/bin
+# PATH and environment only
+export PATH="$PATH:$HOME/.local/bin"
 
