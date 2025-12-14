@@ -15,16 +15,10 @@ makepkg -si
 ```
 ### apps I use
 ```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs-lts-iron npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d virt-manager qemu-desktop edk2-ovmf sl firefox discord kitty cmake
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev wl-clip-persist kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs-lts-iron npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox discord kitty cmake
 ```
 ```bash
 yay -S wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin 
-```
-### deamons
-```bash
-sudo systemctl enable --now libvirtd
-
-sudo usermod -aG libvirt $USER
 ```
 ### Create your fonts directory
 ```bash
@@ -212,7 +206,6 @@ sudo systemctl start docker.service
 ```bash
 sudo usermod -aG docker $USER
 ```
-
 ### nvm thingy
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
@@ -327,6 +320,11 @@ sudo cp ~/.dots/misc/man-with-jelly.conf /usr/share/sddm/themes/sddm-astronaut-t
 to Test theme use 
 ```bash
 sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-astronaut-theme/
+```
+### System.conf (path: /etc/systemd/system/system.conf)
+```bash
+sudo rm -rf /etc/systemd/system/system.conf
+cp ~/.dots/misc/system/system.conf /etc/systemd/system/system.conf 
 ```
 ### Music
 ```bash
