@@ -1,0 +1,131 @@
+@import "mocha.css";
+
+/* thing: up right down left*/
+
+
+* {
+  font-family: "FiraCode Nerd Font", "JetBrains Mono", monospace;
+  font-size: 15px;
+  min-height: 0;
+  font-weight: 500;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 16px;
+  margin: 0px;
+  background-color: @surface0;
+  margin-left: 16px;
+  padding-right: 10px;
+  padding-left: 5px;
+  font-size: 20;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 16px;
+  padding: 5px;
+}
+
+#workspaces button.active {
+  color: @sky;
+  border-radius: 16px;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 16px;
+}
+#custom-notification,
+#network,
+#bluetooth,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-exit,
+#custom-brightness {
+  background-color: @surface0;
+  padding: 2px 16px 2px 14px;
+  margin: 0;
+}
+
+#clock {
+  color: @blue;
+  border-radius: 0px 16px 16px 0px;
+  margin-right: 8px;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#backlight, #battery {
+  border-radius: 0;
+}
+
+#bluetooth {
+  color: @blue;
+  border-radius: 0px 16px 16px 00px;
+  margin-right: 8px;
+}
+
+#network {
+  color: #c5a6ff;
+  border-radius: 16px 0px 0px 16px;
+  margin-right: 0px;
+}
+
+#pulseaudio {
+  color: @teal;
+  border-radius: 16px 0px 0px 16px;
+}
+
+#custom-lock {
+  border-radius: 16px 0px 0px 16px;
+  color: @lavender;
+}
+
+#custom-exit {
+  margin-right: 16px;
+  border-radius: 16px 16px 16px 16px;
+  color: @red;
+}
+
+#tray {
+  margin-right: 8px;
+  border-radius: 0px 16px 16px 0px;
+}
+
+#custom-notification{
+  color: @teal;
+  border-radius: 16px 0px 0px 16px;
+}
+
+#custom-brightness {
+  color: @yellow;
+  border-radius: 0px 0px 0px 0px;
+}
+
+#window {
+  margin-left: 20px
+}

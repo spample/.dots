@@ -13,8 +13,8 @@
         "$HOME/.config/hypr-stuff/settings/waybar-quicklinks.json"
     ],
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
+        "sway/workspaces",
+        "sway/window"
     ],
     "modules-center": [
         

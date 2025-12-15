@@ -1,131 +1,166 @@
-@import "mocha.css";
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
 
-/* thing: up right down left*/
-
+@define-color base alpha(#000000, 0.1);
+/* @define-color surface alpha(@lavender, 0.15); */
+@define-color surface alpha(#000000, 0.5);
+@define-color text #cdd6f4;
+@define-color hoverBg alpha(@mauve, 1);
+@define-color hoverFg #000000;
+@define-color activeBg alpha(@mauve, 1);
+@define-color activeFg #000000;
+@define-color shadow alpha(@lavender, 0.25);
 
 * {
-  font-family: "FiraCode Nerd Font", "JetBrains Mono", monospace;
-  font-size: 15px;
-  min-height: 0;
-  font-weight: 500;
+  all: unset;
+  font-size: 1rem;
+  font-weight: 900;
+  font-family:
+    JetBrainsMonoNerdFont,
+    Font Awesome,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
 }
-
-#waybar {
-  background: transparent;
-  color: @text;
-  margin: 5px 5px;
-}
-
-#workspaces {
-  border-radius: 16px;
-  margin: 5px;
-  background-color: @surface0;
-  margin-left: 16px;
-  padding-right: 10px;
-  padding-left: 5px;
-  font-size: 20;
-}
-
-#workspaces button {
-  color: @lavender;
-  border-radius: 16px;
-  padding: 5px;
-}
-
-#workspaces button.active {
-  color: @sky;
-  border-radius: 16px;
-}
-
-#workspaces button:hover {
-  color: @sapphire;
-  border-radius: 16px;
-}
-#custom-notification,
-#network,
-#bluetooth,
-#tray,
-#backlight,
-#clock,
-#battery,
-#pulseaudio,
-#custom-lock,
-#custom-exit,
-#custom-brightness {
-  background-color: @surface0;
-  padding: 2px 16px 2px 14px;
+window#waybar {
+  background-color: rgba(30, 30, 46, 0.85);
+  border-radius: 0;
+  padding: 0;
   margin: 0;
 }
 
-#clock {
-  color: @blue;
-  border-radius: 0px 16px 16px 0px;
-  margin-right: 8px;
+
+button {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 999px;
+  color: @text;
+  box-shadow: 0px 0px 8px 4px @shadow inset;
+  transition:
+    all 50ms cubic-bezier(0.55, 0, 0.28, 1.682),
+    box-shadow 50ms ease-in-out,
+    background-color 200ms ease-in-out;
 }
 
-#battery {
-  color: @green;
+button:hover {
+  color: @hoverFg;
+  background: @hoverBg;
 }
 
-#battery.charging {
-  color: @green;
+button.active {
+  color: @activeFg;
+  background: @activeBg;
 }
 
-#battery.warning:not(.charging) {
-  color: @red;
+tooltip {
+  opacity: 1;
 }
+/* span { */
+/*   background-color: #ff0000; */
+/* } */
 
-#backlight {
-  color: @yellow;
-}
-
-#backlight, #battery {
-  border-radius: 0;
-}
-
-#bluetooth {
-  color: @blue;
-  border-radius: 0px 16px 16px 00px;
-  margin-right: 8px;
-}
-
-#network {
-  color: #c5a6ff;
-  border-radius: 16px 0px 0px 16px;
-  margin-right: 0px;
-}
-
-#pulseaudio {
-  color: @teal;
-  border-radius: 16px 0px 0px 16px;
-}
-
-#custom-lock {
-  border-radius: 16px 0px 0px 16px;
-  color: @lavender;
-}
-
-#custom-exit {
-  margin-right: 16px;
-  border-radius: 16px 16px 16px 16px;
-  color: @red;
-}
-
-#tray {
-  margin-right: 8px;
-  border-radius: 0px 16px 16px 0px;
-}
-
-#custom-notification{
-  color: @teal;
-  border-radius: 16px 0px 0px 16px;
-}
-
-#custom-brightness {
-  color: @yellow;
-  border-radius: 0px 0px 0px 0px;
+window#waybar.empty #window {
+  background-color: transparent;
 }
 
 #window {
-  margin-left: 20px
+  margin-right: 8px;
+}
+
+#workspaces,
+#custom-appmenu,
+#quicklinks,
+#media,
+#hardware,
+#clock,
+#custom-notification {
+  background-color: @surface;
+  border-radius: 999px;
+  box-shadow: 0px 0px 8px 4px @shadow inset;
+}
+
+#media,
+#hardware,
+#clock {
+  padding: 0 8px;
+}
+
+
+#cpu,
+#memory,
+#disk {
+  padding-right: 0.5rem;
+}
+
+#custom-appmenu,
+#custom-notification {
+  font-size: 24px;
+  min-width: 32px;
+  min-height: 32px;
+  padding-right: 4px;
+  border-radius: 999px;
+}
+
+#workspaces button {
+  margin-right: 2px;
+}
+#workspaces button:last-child {
+  margin-right: 0;
+}
+
+#taskbar {
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes blink {
+  to {
+    background-color: @activeBg;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: @activeBg;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @activeBg;
+}
+
+label:focus {
+  background-color: @activeBg;
+}
+
+#backlight {
+  background-color: @activeBg;
+}
+
+#quicklinks {
+}
+
+#temperature.critical {
+  color: red;
 }
