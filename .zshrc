@@ -36,6 +36,7 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias clear='clear && fastfetch'
 alias platio='source ~/.platformio/penv/bin/activate'
+alias gitAC='git add . && git commit -m'
 
 # Example: pio-init Project-name --board uno
 pio-init() {
