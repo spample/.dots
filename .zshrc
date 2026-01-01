@@ -256,6 +256,7 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export QML2_IMPORT_PATH=/usr/lib/qt/qml:$QML2_IMPORT_PATH
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
