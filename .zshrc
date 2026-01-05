@@ -100,6 +100,9 @@ alias docker-clean=' \
 
 alias alienfxgui='/usr/bin/python3 ~/Documents/github/Dell-G-Series-Controller/main.py'
 
+# Ollama qml llm alias
+alias qmlLLM='ollama run theqtcompany/codellama-13b-qml:latest'
+
 
 #######################################
 #  FUNCTIONS

@@ -1,5 +1,5 @@
 #!/bin/zsh
-
+pkill hyprpaper
 # Wallpaper directory
 DIR="$HOME/.dots/.config/hypr-stuff/wallpapers/"
 
