@@ -101,7 +101,22 @@ alias docker-clean=' \
 alias alienfxgui='/usr/bin/python3 ~/Documents/github/Dell-G-Series-Controller/main.py'
 
 # Ollama qml llm alias
-alias qmlLLM='ollama run theqtcompany/codellama-13b-qml:latest'
+# alias qmlLLM='ollama run theqtcompany/codellama-13b-qml:latest'
+  
+alias qmlLLM='ollama run qml-coder'
+#qmlLLM() {
+#  ollama run qml-coder "$*"
+#}
+
+qmlAsk() {
+  if [ -t 0 ]; then
+    echo "Usage: cat file.qml | askf \"your prompt\""
+    return 1
+  fi
+
+  ollama run qml-coder "$*"
+}
+
 
 
 #######################################

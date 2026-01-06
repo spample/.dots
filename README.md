@@ -301,4 +301,4 @@ sudo cp /usr/share/timidity/timidity.cfg /etc/timidity/
 
 # ToDo
 - [ ] organize README
-- [X] Get docker buildx to work nicely out the box
+- [ ] change wallpaper manager
