@@ -1,0 +1,12 @@
+#https://github.com/danyspin97/wpaperd
+[default]
+duration = "10m"
+mode = "center"
+sorting = "ascending"
+
+[any]
+path = "/home/spample/.dots/.config/hypr-stuff/wallpapers/cool-bg-1.png"
+
+[eDP-1]
+path = "/home/spample/.dots/.config/hypr-stuff/wallpapers"
+
