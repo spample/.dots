@@ -15,10 +15,10 @@ makepkg -si
 ```
 ### apps I use
 ```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs-lts-iron npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox discord kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs-lts-iron npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox discord kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpapered
 ```
 ```bash
-yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse 
+yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse walker-bin elephant-bin
 ```
 ### Create your fonts directory
 ```bash
@@ -298,7 +298,16 @@ sudo pacman -S timidity++
 sudo mkdir -p /etc/timidity
 sudo cp /usr/share/timidity/timidity.cfg /etc/timidity/
 ```
+### Walker
+enable elephant service
+```bash
+elephant service enable
+```
 
+start elephant service
+```bash
+systemctl --user start elephant.service
+```
 # ToDo
 - [ ] organize README
 - [ ] change wallpaper manager
