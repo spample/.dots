@@ -124,7 +124,7 @@
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "$HOME/.config/hypr-stuff/settings/networkmanager.sh",
+    "on-click": "$HOME/.config/hypr-stuff/scripts/rofi-wifi-menu/rofi-wifi-menu.sh",
     "on-click-right": "$HOME/.config/hypr-stuff/scripts/nm-applet.sh toggle",
   },
 
