@@ -2,9 +2,9 @@
 
 pkg update && pkg upgrade
 
-
-pkg install git clang zsh zoxide termux-services neovim openssh oh-my-posh make fastfetch fakeroot curl ripgrep termux-api
-
+```bash
+pkg install git clang zsh zoxide termux-services neovim openssh oh-my-posh make fastfetch fakeroot curl ripgrep termux-api golang wget
+```
 # zinit install
 
 make dir
@@ -18,7 +18,8 @@ git clone https://github.com/zdharma-continuum/zinit.git $HOME/.local/share/zini
 ```
 delete stuff
 ```bash
-rm .bash_history
+rm ~/.bash_history
+rm ~/.zshrc
 ```
 Github
 ```bash
