@@ -227,7 +227,7 @@ zinit snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/npm/npm.plu
 #######################################
 #  PROMPT & TOOLS
 #######################################
-#eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/Nord-v2.json)"
+eval "$(starship init zsh)"
 fastfetch
 
 #######################################

@@ -3,7 +3,7 @@
 pkg update && pkg upgrade
 
 ```bash
-pkg install git clang zsh zoxide termux-services neovim openssh oh-my-posh make fastfetch fakeroot curl ripgrep termux-api golang wget
+pkg install git clang zsh zoxide termux-services neovim openssh make fastfetch fakeroot curl ripgrep termux-api golang wget starship
 ```
 # zinit install
 
