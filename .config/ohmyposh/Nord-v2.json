@@ -133,7 +133,7 @@
             "cache_duration": "none"
           },
           "template": "\u2570\u2500",
-          "foreground": "#B48EAD",
+          "foreground": "#c4a1d4",
           "type": "text",
           "style": "plain"
         },
@@ -142,7 +142,7 @@
             "always_enabled": true,
             "cache_duration": "none"
           },
-          "template": "<#B48EAD>❯</><#A3BE8C>❯</><#EBCB8B>❯</> ",
+          "template": "<#c4a1d4>❯</><#A3BE8C>❯</><#EBCB8B>❯</> ",
           "foreground": "#8FBCBB",
           "type": "status",
           "style": "plain",
