@@ -22,10 +22,10 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "JetBrains Mono Nerd Font 10";
-    background:                  #11092D;
-    background-alt:              #281657;
+    background:                  #313244;
+    background-alt:              #2E3440;
     foreground:                  #FFFFFF;
-    selected:                    #DF5296;
+    selected:                    #C5A6FF;
     active:                      #6E77FF;
     urgent:                      #8E3596;
 }
@@ -71,7 +71,7 @@ inputbar {
     spacing:                     10px;
     padding:                     80px 60px;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/a.png", width);
+    background-image:            url("~/.config/rofi/images/23-37_5760x5760.png", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
     children:                    [ "textbox-prompt-colon", "entry", "dummy", "mode-switcher" ];
@@ -119,7 +119,7 @@ button {
 }
 button selected {
     background-color:            @selected;
-    text-color:                  @foreground;
+    text-color:                  #2E3440;
 }
 
 /*****----- Listview -----*****/
@@ -165,7 +165,7 @@ element normal.active {
 }
 element selected.normal {
     background-color:            @selected;
-    text-color:                  @foreground;
+    text-color:                  #2E3440;
 }
 element selected.urgent {
     background-color:            @urgent;
