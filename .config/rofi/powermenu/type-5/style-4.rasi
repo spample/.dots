@@ -17,10 +17,11 @@ configuration {
     font:                        "JetBrains Mono Nerd Font 10";
     background:                  #131D1F;
     background-alt:              #183A43;
-    foreground:                  #FFFFFF;
-    selected:                    #649094;
+    foreground:                  #b8b9ff;
+    selected:                    #b48ff7;
     active:                      #E9CC9D;
-    urgent:                      #FEA861;
+    active-alt:                  #e1b8ff;
+    urgent:                      #e1b8ff;
 }
 
 /*
@@ -38,8 +39,8 @@ window {
     y-offset:                    0px;
 
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               10px;
+    border:                      3px solid;
+    border-radius:               50px;
     border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
@@ -64,7 +65,7 @@ inputbar {
     spacing:                     0px;
     padding:                     150px 40px;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/i.jpg", width);
+    background-image:            url("~/.config/rofi/images/23-37_5760x5760.png", width);
     children:                    [ "textbox-prompt-colon", "dummy","prompt"];
 }
 
@@ -89,7 +90,7 @@ prompt {
     border:                      0px 0px 5px 5px;
     border-radius:               5px 15px 5px 15px;
     border-color:                @selected;
-    background-color:            @active;
+    background-color:            @active-alt;
     text-color:                  @background;
 }
 
