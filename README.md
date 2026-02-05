@@ -309,5 +309,8 @@ start elephant service
 systemctl --user start elephant.service
 ```
 # ToDo
-- [ ] organize README
-- [ ] change wallpaper manager
+- [ ] Re-organize README
+- [X] Change wallpaper manager
+- [ ] Customize Wi-fi Rofi
+- [ ] Customize Swaync
+- [ ] Redo SDDM-greeter
