@@ -240,9 +240,22 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[3~" delete-char
-
 bindkey "^[[3;5~" kill-word
 bindkey "^[[3;3~" kill-word
+#######################################
+#   Vim-Keybinds
+#######################################
+#bindkey -v
+#bindkey -M viins 'jk' vi-cmd-mode
+#bindkey -M vicmd '^[[A' up-line-or-history
+#bindkey -M vicmd '^[[B' down-line-or-history
+#bindkey -M vicmd '^[[C' forward-char
+#bindkey -M vicmd '^[[D' backward-char
+## Make backspace behave like a normal
+#bindkey -M viins '^?' backward-delete-char
+#bindkey -M viins '^H' backward-delete-char
+#bindkey -M vicmd '^?' backward-delete-char
+#bindkey -M vicmd '^H' backward-delete-char
 
 export XCURSOR_THEME=Nordic-cursors
 export XCURSOR_SIZE=36
