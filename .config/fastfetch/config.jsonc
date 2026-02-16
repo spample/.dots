@@ -39,7 +39,7 @@
     },
     {
       "type": "command",
-      "key": "│ ├ Installed Since",
+      "key": "│ ├ No Major Incident Since:",
       "keyColor": "#f6ff45",
       "text": "birth=$(stat -c %W / 2>/dev/null); [ \"$birth\" -eq 0 ] && echo unknown || echo $(( ($(date +%s) - birth) / 86400 )) days"
     },
