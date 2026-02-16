@@ -5,9 +5,9 @@
 ###########################################
 **/tmp_files/
 
-\clipboard_history.json
+**./.config/clipse/clipboard_history.json
 
-\clipse.log
+**./.config/clipse/clipse.log
 
 ###########################################
 #
