@@ -2382,3 +2382,28 @@
 2026/02/16 18:11:26 logger.go:29: INFO: CUSTOM THEME DISABLED
 2026/02/16 18:12:44 logger.go:29: INFO: CUSTOM THEME DISABLED
 2026/02/16 18:20:22 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/16 18:20:33 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/16 20:49:40 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/16 20:49:40 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/16 20:49:40 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/16 20:49:40 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/16 20:49:41 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/16 20:49:42 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/16 20:50:26 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 10:21:42 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 10:21:49 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 10:22:52 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 15:30:09 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 15:30:09 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 15:30:09 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 15:30:09 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/17 15:30:09 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/17 15:40:45 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 15:45:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 15:45:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 15:45:55 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 15:45:55 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/17 15:45:55 logger.go:37: WARN: Failed to get active window on Wayland: no suitable tool found (Hyprctl, Wlrctl)
+2026/02/17 15:55:18 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 16:10:07 logger.go:29: INFO: CUSTOM THEME DISABLED
+2026/02/17 16:23:39 logger.go:29: INFO: CUSTOM THEME DISABLED
