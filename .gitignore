@@ -3,9 +3,9 @@
 # Clipse ignore files
 #
 ###########################################
-.conf/clipse/tmp_files/
-.config/clipse/clipboard_history.json
-.config/clipse/clipse.log
+\.conf/clipse/tmp_files/
+\.config/clipse/clipboard_history.json
+\.config/clipse/clipse.log
 
 ###########################################
 #
@@ -13,5 +13,5 @@
 #
 ###########################################
 *.log
-/misc/notes/
-/misc/system/
+\misc/notes/
+\misc/system/
