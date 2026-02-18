@@ -33,7 +33,7 @@ add-zsh-hook precmd save_history_to_file
 #######################################
 alias cp='cp -i'
 alias mv='mv -i'
-alias mkdir='mkdir -p'
+#alias mkdir='mkdir -p'
 alias clear='clear && fastfetch'
 alias platio='source ~/.platformio/penv/bin/activate'
 alias gitAC='git add . && git commit -m'
@@ -103,19 +103,19 @@ alias alienfxgui='/usr/bin/python3 ~/Documents/github/Dell-G-Series-Controller/m
 # Ollama qml llm alias
 # alias qmlLLM='ollama run theqtcompany/codellama-13b-qml:latest'
   
-alias qmlLLM='ollama run qml-coder'
+#alias qmlLLM='ollama run qml-coder'
 #qmlLLM() {
 #  ollama run qml-coder "$*"
 #}
 
-qmlAsk() {
-  if [ -t 0 ]; then
-    echo "Usage: cat file.qml | askf \"your prompt\""
-    return 1
-  fi
-
-  ollama run qml-coder "$*"
-}
+#qmlAsk() {
+#  if [ -t 0 ]; then
+#    echo "Usage: cat file.qml | askf \"your prompt\""
+#    return 1
+#  fi
+#
+#  ollama run qml-coder "$*"
+#}
 
 
 
@@ -239,8 +239,6 @@ bindkey "^[[3;3~" kill-word
 #bindkey -M vicmd '^?' backward-delete-char
 #bindkey -M vicmd '^H' backward-delete-char
 
-export XCURSOR_THEME=Nordic-cursors
-export XCURSOR_SIZE=36
 export SUDO_EDITOR=nvim
 # Smart edit command:
 vi() {
