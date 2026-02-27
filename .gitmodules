@@ -1,0 +1,3 @@
+[submodule "/home/spample/.dots/misc/personalStuff"]
+	path = /home/spample/.dots/misc/personalStuff
+	url = git@github.com:spample/personalStuff.git

@@ -303,11 +303,21 @@ enable elephant service
 ```bash
 elephant service enable
 ```
-
 start elephant service
 ```bash
 systemctl --user start elephant.service
 ```
+### Sub-modules
+how to get sub-modules
+```bash
+git submodule update --init --recursive
+```
+update modules
+```bash
+git submodule update --remote --merge
+```
+
+
 # ToDo
 - [ ] Re-organize README
 - [ ] Add README summery/Description
@@ -317,3 +327,4 @@ systemctl --user start elephant.service
 - [ ] Redo SDDM-greeter
 - [ ] Add Text-Fox
 - [ ] Customize rofi-emoji
+- [ ] Make sub-module for personal stuff
