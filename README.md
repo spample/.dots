@@ -314,3 +314,4 @@ systemctl --user start elephant.service
 - [ ] Customize Wi-fi Rofi
 - [ ] Customize Swaync
 - [ ] Redo SDDM-greeter
+- [ ] Add Text-Fox
