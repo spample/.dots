@@ -1,3 +1,6 @@
 [submodule "/home/spample/.dots/misc/personalStuff"]
 	path = /home/spample/.dots/misc/personalStuff
 	url = git@github.com:spample/personalStuff.git
+[submodule "/home/spample/.dots/misc/.obsidianNotes"]
+	path = /home/spample/.dots/misc/.obsidianNotes
+	url = git@github.com:spample/.obsidian-notes.git
