@@ -325,6 +325,6 @@ git submodule update --remote --merge
 - [ ] Customize Wi-fi Rofi
 - [ ] Customize Swaync
 - [ ] Redo SDDM-greeter
-- [ ] Add Text-Fox
+- [X] Add Text-Fox
 - [ ] Customize rofi-emoji
-- [ ] Make sub-module for personal stuff
+- [X] Make sub-module for personal stuff
