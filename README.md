@@ -15,7 +15,7 @@ makepkg -si
 ```
 ### apps I use
 ```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs-lts-iron npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox discord kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpapered bat p7zip unrar bluetui obsidian btop filezilla
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs-lts-iron npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox discord kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpapered bat p7zip unrar bluetui obsidian btop filezilla nvm
 ```
 ```bash
 yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker slack-desktop ventoy-bin zoom
@@ -172,9 +172,11 @@ sudo systemctl start docker.service
 ```bash
 sudo usermod -aG docker $USER
 ```
-### nvm thingy
+### Set NodeJS to the correct version for my neovim markdown preview plugin
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+nvm install 20
+nvm use 20
+nvm alias default 20
 ```
 ### systems stuff
 ```bash
@@ -297,15 +299,6 @@ cp ~/.dots/misc/system/system.conf /etc/systemd/system/system.conf
 sudo pacman -S timidity++
 sudo mkdir -p /etc/timidity
 sudo cp /usr/share/timidity/timidity.cfg /etc/timidity/
-```
-### Walker
-enable elephant service
-```bash
-elephant service enable
-```
-start elephant service
-```bash
-systemctl --user start elephant.service
 ```
 ### Sub-modules
 how to get sub-modules
