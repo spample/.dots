@@ -7,6 +7,10 @@ vim.cmd("set shiftwidth=2")
 vim.opt.termguicolors = true
 vim.g.mapleader = " "
 vim.o.wrap = false
+-- Remaps
+vim.keymap.set({'n', 'v'}, 'd', '"_d')
+vim.keymap.set('n', 'dd', '_dd')
+
 
 vim.opt.clipboard = "unnamedplus"
 

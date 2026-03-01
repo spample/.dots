@@ -15,7 +15,7 @@ makepkg -si
 ```
 ### apps I use
 ```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs-lts-iron npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox discord kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpapered bat p7zip unrar bluetui obsidian btop filezilla nvm
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox discord kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm
 ```
 ```bash
 yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker slack-desktop ventoy-bin zoom
@@ -174,9 +174,16 @@ sudo usermod -aG docker $USER
 ```
 ### Set NodeJS to the correct version for my neovim markdown preview plugin
 ```bash
+source $HOME/.config/nvm/nvm.sh
+```
+```bash
 nvm install 20
 nvm use 20
 nvm alias default 20
+```
+live server plugin
+```bash
+npm install -g live-server
 ```
 ### systems stuff
 ```bash
