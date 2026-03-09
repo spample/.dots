@@ -8,9 +8,17 @@ vim.opt.termguicolors = true
 vim.g.mapleader = " "
 vim.o.wrap = false
 -- Remaps
-vim.keymap.set({'n', 'v'}, 'd', '"_d')
-vim.keymap.set('n', 'dd', '_dd')
+vim.keymap.set({ "n", "v" }, "d", '"_d')
+vim.keymap.set("n", "dd", "_dd")
 
+-- disables copilot default tab mapping
+vim.g.copilot_no_tab_map = true
+
+-- copilot remaps (remap the copilot#Accept function to shift+tab)
+vim.keymap.set("i", "<S-Tab>", 'copilot#Accept("<CR>")', {
+  expr = true,
+  silent = true,
+})
 
 vim.opt.clipboard = "unnamedplus"
 
