@@ -17,6 +17,10 @@ makepkg -si
 ```bash
 sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox discord kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm
 ```
+this maybe fixed audio issues with pipewire
+```bash
+sudo pacman -S --needed pavucontrol
+```
 ```bash
 yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker slack-desktop ventoy-bin zoom
 ```
