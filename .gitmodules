@@ -1,6 +1,12 @@
-[submodule "/home/spample/.dots/misc/personalStuff"]
-	path = /home/spample/.dots/misc/personalStuff
+[submodule "misc/personalStuff"]
+	path = misc/personalStuff
 	url = git@github.com:spample/personalStuff.git
-[submodule "/home/spample/.dots/misc/.obsidianNotes"]
-	path = /home/spample/.dots/misc/.obsidianNotes
+[submodule "misc/.obsidianNotes"]
+	path = misc/.obsidianNotes
 	url = git@github.com:spample/.obsidian-notes.git
+[submodule ".tmux/plugins/tmux-continuum"]
+	path = .tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum
+[submodule ".tmux/plugins/tmux-resurrect"]
+	path = .tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
