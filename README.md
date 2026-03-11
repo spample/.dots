@@ -21,6 +21,12 @@ this maybe fixed audio issues with pipewire
 ```bash
 sudo pacman -S --needed pavucontrol
 ```
+
+maybe fix keybinds
+```bash
+sudo pacman -S --needed evtest
+```
+
 ```bash
 yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker slack-desktop ventoy-bin zoom
 ```
