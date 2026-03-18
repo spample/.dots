@@ -19,6 +19,10 @@ setopt SHARE_HISTORY
 # Fix Ctrl-S freezing terminal (enables Ctrl-R & Ctrl-S for search)
 [[ $- == *i* ]] && stty -ixon
 
+# NOT Sure tbh
+autoload -Uz compinit
+compinit -C
+
 #######################################
 #  HISTORY AUTO-SAVE HOOK
 #######################################
@@ -117,8 +121,6 @@ alias alienfxgui='/usr/bin/python3 ~/Documents/github/Dell-G-Series-Controller/m
 #  ollama run qml-coder "$*"
 #}
 
-
-
 #######################################
 #  FUNCTIONS
 #######################################
@@ -171,26 +173,17 @@ zinit ice lucid wait'1' atload'
     ZSH_HIGHLIGHT_STYLES[double-quoted-argument]="fg=#3bdb96"
     ZSH_HIGHLIGHT_STYLES[precommand]="fg=#6fcc3d"
     ZSH_HIGHLIGHT_STYLES[hashed-command]="fg=#9e6cad"
-
-
 '
 zinit light zsh-users/zsh-syntax-highlighting
 # zoxide
-zinit ice wait lucid
+zinit ice lucid
 zinit light ajeetdsouza/zoxide
-
-# fzf
-zinit ice wait lucid
-zinit light junegunn/fzf
 
 # you-should-use
 #zinit ice wait lucid
 #zinit light MichaelAquilina/zsh-you-should-use
 
 # Oh My Zsh plugin snippets (lazy loaded)
-zinit ice wait lucid
-zinit snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
-
 zinit ice wait lucid
 zinit snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugin.zsh
 
@@ -210,7 +203,7 @@ zinit snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/npm/npm.plu
 #  PROMPT & TOOLS
 #######################################
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/Nord-v2.json)"
-fastfetch
+[[ $- == *i* ]] && fastfetch
 
 #######################################
 #   Keybinds
@@ -240,7 +233,7 @@ bindkey "^[[3;3~" kill-word
 #bindkey -M vicmd '^H' backward-delete-char
 
 export SUDO_EDITOR=nvim
-# Smart edit command:
+# Smart editor command:
 vi() {
   if [[ "$1" == /* && ! -w "$1" && -f "$1" ]]; then
     # If it's an absolute path, not writable, and is a file → use sudoedit
@@ -254,9 +247,8 @@ vi() {
 export XDG_CONFIG_HOME="$HOME/.config"
 export QT_QPA_PLATFORMTHEME=qt6ct
 export STEAM_FORCE_DESKTOPUI_SCALING=2
-
-
-export PATH="$PATH:$(go env GOPATH)/bin"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
@@ -269,5 +261,9 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 
 export QML2_IMPORT_PATH=/usr/lib/qt/qml:$QML2_IMPORT_PATH
 export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  nvm "$@"
+}
