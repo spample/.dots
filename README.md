@@ -1,4 +1,4 @@
-#   Instructions
+#   This are the steps!!
 
 ### Update packages
 ```bash
@@ -32,7 +32,7 @@ sudo pacman -S --needed evtest
 ```
 
 ```bash
-yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker slack-desktop ventoy-bin zoom vesktop-bin ventoy-bin
+yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker slack-desktop ventoy-bin zoom vesktop-bin ventoy-bin ganttproject
 ```
 ### Create your fonts directory
 ```bash
@@ -330,6 +330,21 @@ update modules
 ```bash
 git submodule update --remote --merge
 ```
+## Temp
+ROS 2
+```ros2
+yay -S ros2-humble 
+```
+obs-virt-cam
+```
+sudo pacman -S obs-studio v4l2loopback-dkms linux-headers
+```
+Load the module to create a virtual device:
+```
+sudo modprobe v4l2loopback exclusive_caps=1 card_label="OBS Virtual Camera"
+
+```
+
 
 
 # ToDo
