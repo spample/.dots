@@ -261,6 +261,13 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 
 export QML2_IMPORT_PATH=/usr/lib/qt/qml:$QML2_IMPORT_PATH
 export NVM_DIR="$HOME/.config/nvm"
+source $HOME/.config/nvm/nvm.sh
+
+export PATH="$HOME/vcpkg:$PATH"
+export VCPKG_ROOT="$HOME/vcpkg"
+export VCPKG_DISABLE_METRICS=1
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
 
 nvm() {
   unset -f nvm
