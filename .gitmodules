@@ -13,3 +13,6 @@
 [submodule ".misc/portfolio"]
 	path = .misc/portfolio
 	url = git@github.com:spample/spample.github.io.git
+[submodule "misc/portfolio"]
+	path = misc/portfolio
+	url = git@github.com:spample/spample.github.io.git
