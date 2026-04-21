@@ -1,0 +1,13 @@
+(defcfg)
+
+(defsrc
+  caps
+)
+
+(defalias
+  caps-esc (tap-hold 200 200 esc lctl)
+)
+
+(deflayer base
+  @caps-esc
+)

@@ -1,0 +1,161 @@
+{
+  "logo": {
+    "type": "file",
+    "source": "C:/Users/luisa/.dots/logo_fixed.txt",
+    "color": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": ""
+    },
+    "width": null,
+    "height": null,
+    "padding": {
+      "top": 0,
+      "left": 0,
+      "right": 4
+    },
+    "printRemaining": true,
+    "preserveAspectRatio": false,
+    "recache": false,
+    "position": "left",
+    "chafa": {
+      "fgOnly": false,
+      "symbols": "block+border+space-wide-inverted"
+    }
+  },
+    // Display formatting
+  "display": {
+    "separator": " 󰑃  " // Icon to separate keys from values
+  },
+  // Main visual modules
+  "modules": [
+    // 🌈 Top Rainbow Bar
+    {
+      "type": "custom",
+      "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m"
+    },
+    // 🖥️ OS and Packages
+    {
+      "type": "os",
+      "key": " Windows 11",
+      "keyColor": "#5cd1ff"
+    },
+    {
+      "type": "kernel",
+      "key": "│ ┌ Kernel",
+      "keyColor": "#5cd1ff"
+    },
+    {
+      "type": "packages",
+      "key": "│ ├󰏖 Packages",
+      "keyColor": "#5cd1ff"
+    },
+    {
+      "type": "command",
+      "key": "│ ├ No Major Incident Since:",
+      "keyColor": "#5cd1ff",
+      "text": "birth=$(stat -c %W / 2>/dev/null); [ \"$birth\" -eq 0 ] && echo unknown || echo $(( ($(date +%s) - birth) / 86400 )) days"
+    },
+    {
+      "type": "shell",
+      "key": "│ └ Shell",
+      "keyColor": "#5cd1ff"
+    },
+    "break",
+    // 🪟 Desktop and Appearance
+    {
+      "type": "wm",
+      "key": " DE/WM",
+      "keyColor": "#c68cff"
+    },
+    {
+      "type": "wmtheme",
+      "key": "│ ┌󰉼 Theme",
+      "keyColor": "#c68cff"
+    },
+    {
+      "type": "icons",
+      "key": "│ ├󰀻 Icons",
+      "keyColor": "#c68cff"
+    },
+    {
+      "type": "terminalfont",
+      "key": "│ ├🗚 Term Font",
+      "keyColor": "#c68cff"
+    },
+    {
+      "type": "terminal",
+      "key": "│ ├ Terminal",
+      "keyColor": "#c68cff"
+    },
+    {
+      "type": "command",
+      "key": "│ ├ Git User",
+      "keyColor": "#c68cff",
+      "text": "git config --global user.name || echo 'N/A'"
+    },
+    {
+      "type": "command",
+      "key": "│ └ Website",
+      "keyColor": "#c68cff",
+      "text": "echo https://spample.github.io/"
+    },
+    "break",
+    // 🧠 Hardware Info
+    {
+      "type": "host",
+      "key": "󰌢 SYSTEM",
+      "keyColor": "#ff8c8c"
+    },
+    {
+      "type": "cpu",
+      "key": "│ ┌󰻠 CPU",
+      "keyColor": "#ff8c8c"
+    },
+    {
+      "type": "gpu",
+      "key": "│ ├󰻑 GPU",
+      "format": "{2}",
+      "keyColor": "#ff8c8c"
+    },
+    {
+      "type": "display",
+      "key": "│ ├󰍹 Display",
+      "keyColor": "#ff8c8c",
+      "compactType": "original-with-refresh-rate"
+    },
+    {
+      "type": "memory",
+      "key": "│ ├󰾆 Memory",
+      "keyColor": "#ff8c8c"
+    },
+    {
+      "type": "uptime",
+      "key": "│ ├ Uptime",
+      "keyColor": "#ff8c8c"
+    },
+    {
+      "type": "command",
+      "key": "│ ├󰓡 IP",
+      "keyColor": "#ff8c8c",
+      "text": "hostname -I | awk '{print $1}'"
+    },
+    {
+      "type": "battery",
+      "key": "│ └ Battery",
+      "keyColor": "#ff8c8c"
+    },
+    // 🌈 Bottom Rainbow Bar
+    {
+      "type": "custom",
+      "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m"
+    }
+  ]
+}
+
