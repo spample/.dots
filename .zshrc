@@ -209,7 +209,6 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/Nord-v2.json)"
 #   Keybinds
 #######################################
 autoload -U select-word-style
-select-word-style bash
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -261,9 +260,7 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 
 export QML2_IMPORT_PATH=/usr/lib/qt/qml:$QML2_IMPORT_PATH
 export NVM_DIR="$HOME/.config/nvm"
-source $HOME/.config/nvm/nvm.sh
 
-export PATH="$HOME/vcpkg:$PATH"
 export VCPKG_ROOT="$HOME/vcpkg"
 export VCPKG_DISABLE_METRICS=1
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
