@@ -1,35 +1,20 @@
-#!/bin/zsh
+#!/bin/bash
 
-HYPRLAND_DEVICE="dell0b99:00-06cb:ce81-touchpad"
+DEVICE="dell0b99:00-06cb:ce81-touchpad"
+STATE_FILE="/tmp/touchpad_enabled"
 
-if [ -z "$XDG_RUNTIME_DIR" ]; then
-  export XDG_RUNTIME_DIR=/run/user/$(id -u)
+if [ ! -f "$STATE_FILE" ]; then
+  echo "1" >"$STATE_FILE"
 fi
 
-export STATUS_FILE="$XDG_RUNTIME_DIR/touchpad.status"
+STATE=$(cat "$STATE_FILE")
 
-enable_touchpad() {
-  printf "true" >"$STATUS_FILE"
-
-  notify-send -u normal "Enabling Touchpad"
-
-  hyprctl keyword "device[dell0b99:00-06cb:ce81-touchpad]:enabled" true
-}
-
-disable_touchpad() {
-  printf "false" >"$STATUS_FILE"
-
-  notify-send -u normal "Disabling Touchpad"
-
-  hyprctl keyword "device[dell0b99:00-06cb:ce81-touchpad]:enabled" false
-}
-
-if ! [ -f "$STATUS_FILE" ]; then
-  enable_touchpad
+if [ "$STATE" = "1" ]; then
+  hyprctl eval "device { name = $DEVICE; enabled = false; }"
+  echo "0" >"$STATE_FILE"
+  notify-send "Touchpad disabled"
 else
-  if [ $(cat "$STATUS_FILE") = "true" ]; then
-    disable_touchpad
-  elif [ $(cat "$STATUS_FILE") = "false" ]; then
-    enable_touchpad
-  fi
+  hyprctl eval "device { name = $DEVICE; enabled = true; }"
+  echo "1" >"$STATE_FILE"
+  notify-send "Touchpad enabled"
 fi

@@ -11,6 +11,7 @@ vim.o.wrap = false
 -- Remaps
 vim.keymap.set({ "n", "v" }, "d", '"_d')
 vim.keymap.set({ "n", "v" }, "c", '"_c')
+vim.api.nvim_set_keymap("x", "p", '"_dP', { noremap = true, silent = true })
 
 -- disables copilot default tab mapping
 vim.g.copilot_no_tab_map = true

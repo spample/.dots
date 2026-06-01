@@ -17,7 +17,11 @@ return {
 
       -- Manual / advanced servers
       lspconfig.clangd.setup({
-        cmd = { "clangd", "--query-driver=/usr/bin/**" },
+        -- Force the absolute path to Mason's clangd binary
+        cmd = {
+          vim.fn.expand("$HOME") .. "/.local/share/nvim/mason/bin/clangd",
+          "--query-driver=/usr/bin/**",
+        },
         root_dir = util.root_pattern("platformio.ini", ".git"),
         capabilities = capabilities,
       })

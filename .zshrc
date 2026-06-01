@@ -260,6 +260,7 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 
 export QML2_IMPORT_PATH=/usr/lib/qt/qml:$QML2_IMPORT_PATH
 export NVM_DIR="$HOME/.config/nvm"
+source $HOME/.config/nvm/nvm.sh
 
 export VCPKG_ROOT="$HOME/vcpkg"
 export VCPKG_DISABLE_METRICS=1
