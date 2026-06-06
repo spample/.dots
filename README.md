@@ -4,36 +4,68 @@
 ```bash
 sudo pacman -Syu
 ```
+### Install base-devel & git
+```bash
+sudo pacman -S --needed base-devel git
+```
 ### Installing yay
 ```bash
+mkdir -p $HOME/Documents/github
 cd $HOME/Documents/github
 git clone https://aur.archlinux.org/yay.git
-```
 ```bash
 cd yay
 makepkg -si 
 ```
+---
 ### apps I use
 ```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm opentabletdriver
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord
 ```
-tablet drivers
 ```bash
-systemctl --user enable --now opentabletdriver
+yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker ventoy-bin ventoy-bin
 ```
-this maybe fixed audio issues with pipewire
+---
+### OpenSSH
+####  Start SSH daemon
 ```bash
-sudo pacman -S --needed pavucontrol
+sudo systemctl start sshd
+sudo systemctl enable sshd
 ```
-
-maybe fix keybinds
+####  allow port
 ```bash
-sudo pacman -S --needed evtest
+sudo ufw allow 22/tcp
 ```
-
+---
+### Github setup
 ```bash
-yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker slack-desktop ventoy-bin zoom vesktop-bin ventoy-bin ganttproject
+git config --global user.name spample
 ```
+```bash
+git config --global user.email luis.antonio.gonzalez501@gmail.com
+```
+```bash
+git config --global init.defaultBranch main
+```
+### Github ssh setup
+```bash
+eval "$(ssh-agent -s)"
+```
+```bash
+ssh-keygen -t ed25519 -C luis.antonio.gonzalez501@gmail.com
+```
+#### copy key in Linux(X11)
+```bash
+xclip -selection clipboard $HOME/.ssh/id_ed25519.pub 
+```
+#### copy key in Linux(Wayland)
+```bash
+cat $HOME/.ssh/id_ed25519.pub | wl-copy
+```
+```bash
+ssh -T git@github.com
+```
+---
 ### Create your fonts directory
 ```bash
 mkdir -p $HOME/.local/share/fonts
@@ -72,10 +104,11 @@ cd nerd-fonts
 ```bash
 fc-cache -fv
 ```
+---
 ### Installing Zsh, ohmyzsh, ohmyposh, zinit
 #### Zsh
 ```bash
-sudo pacman -S zsh
+sudo pacman -S --needed zsh
 ```
 ```bash
 chsh -s /bin/zsh
@@ -125,32 +158,11 @@ sudo rm /etc/systemd/logind.conf
 ```
 # Stow:
 run `stow .` from the dots directory
+or for force link run `stow . --adopt --override --restow`
 
 make sure to have the dots on the home directory
 
-### Github setup
-```bash
-git config --global user.name spample
-```
-```bash
-git config --global user.email luis.antonio.gonzalez501@gmail.com
-```
-```bash
-git config --global init.defaultBranch main
-```
-### Github ssh setup
-```bash
-eval "$(ssh-agent -s)"
-```
-```bash
-ssh-keygen -t ed25519 -C luis.antonio.gonzalez501@gmail.com
-```
-```bash
-xclip -selection clipboard $HOME/.ssh/id_ed25519.pub 
-```
-```bash
-ssh -T git@github.com
-```
+
 ##  keyd installation
 ```bash
 cd ~/Documents/github
@@ -159,13 +171,12 @@ cd keyd
 make && sudo make install
 sudo systemctl enable --now keyd
 ```
-symlink into system shortcuts
-
+### symlink into system shortcuts
 ```bash
 sudo ln -s ~/.dots/.config/keyd/default.conf /etc/keyd/
 ```
+---
 ## GTK Theme
-
 ```bash
 mkdir -p ~/.themes
 cd ~/.themes
@@ -174,6 +185,7 @@ git clone https://github.com/EliverLara/Nordic.git
 ```bash
 sudo mv Nordic /usr/share/themes/
 ```
+---
 ### docker
 ```bash
 sudo systemctl enable docker.service
@@ -186,6 +198,7 @@ sudo systemctl start docker.service
 ```bash
 sudo usermod -aG docker $USER
 ```
+---
 ### Set NodeJS to the correct version for my neovim markdown preview plugin
 ```bash
 source $HOME/.config/nvm/nvm.sh
@@ -195,38 +208,23 @@ nvm install 20
 nvm use 20
 nvm alias default 20
 ```
-live server plugin
+#### live server plugin
 ```bash
 npm install -g live-server
 ```
+---
 ### systems stuff
 ```bash
 sudo systemctl enable --now NetworkManager
 nm-applet --indicator &
 ```
-### OpenSSH
-####  Start SSH daemon
-```bash
-sudo systemctl start sshd
-sudo systemctl enable sshd
-```
-####  allow port
-```bash
-sudo ufw allow 22/tcp
-```
+---
 ##  PlatformIO
 ```bash
 curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
 python3 get-platformio.py
 ```
-- change directory to the folder where is located downloaded "get-platformio.py"
-```bash
-cd /path-to-dir/where/get-platformio.py/is-located
-```
-- run it
-```bash
-python get-platformio.py
-```
+---
 ##  Kvantum stuff
 - Create a Kvantum symlink
 ```bash
@@ -235,6 +233,7 @@ ln -s /home/spample/.dots/misc/Kvanthum/ /home/spample/Documents/
 - Go to Kvantum Manager application and install the Nordic Darker Theme inside the Kvantum folder
 - Apply the theme in Kvantum manager
 - go into the qt6ct app and also select dark Kvantum
+---
 ### sddm
 ```bash
 https://github.com/uiriansan/SilentSDDM
@@ -310,17 +309,20 @@ to Test theme use
 ```bash
 sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-astronaut-theme/
 ```
+---
 ### System.conf (path: /etc/systemd/system/system.conf)
 ```bash
 sudo rm -rf /etc/systemd/system/system.conf
 cp ~/.dots/misc/system/system.conf /etc/systemd/system/system.conf 
 ```
+---
 ### Music
 ```bash
 sudo pacman -S timidity++
 sudo mkdir -p /etc/timidity
 sudo cp /usr/share/timidity/timidity.cfg /etc/timidity/
 ```
+---
 ### Sub-modules
 how to get sub-modules
 ```bash
@@ -330,7 +332,8 @@ update modules
 ```bash
 git submodule update --remote --merge
 ```
-## Temp
+---
+## Misc
 ROS 2
 ```ros2
 yay -S ros2-humble 
