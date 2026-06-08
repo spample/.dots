@@ -18,7 +18,8 @@ sudo pacman -S --needed --noconfirm \
   bash\
   qt6-base\
   cmake\
-  ninja
+  ninja\
+  qt6-tools
 ```
 
 ```bash
@@ -27,6 +28,7 @@ yay -S --needed --noconfirm \
   quickshell-git\
   app2unit\
   libcava
+  yay -S colloid-icon-theme-git
 ```
 
 ## Quickshell Celestia clone:
