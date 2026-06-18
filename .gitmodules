@@ -1,18 +1,12 @@
 [submodule "misc/personalStuff"]
 	path = misc/personalStuff
 	url = git@github.com:spample/personalStuff.git
-[submodule "misc/.obsidianNotes"]
-	path = misc/.obsidianNotes
-	url = git@github.com:spample/.obsidian-notes.git
 [submodule ".tmux/plugins/tmux-continuum"]
 	path = .tmux/plugins/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum
 [submodule ".tmux/plugins/tmux-resurrect"]
 	path = .tmux/plugins/tmux-resurrect
-  url = https://github.com/tmux-plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
 [submodule ".misc/portfolio"]
 	path = .misc/portfolio
-	url = git@github.com:spample/spample.github.io.git
-[submodule "misc/portfolio"]
-	path = misc/portfolio
 	url = git@github.com:spample/spample.github.io.git
