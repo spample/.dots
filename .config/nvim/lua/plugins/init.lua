@@ -1,0 +1,18 @@
+-- Plugin entry point.
+-- Keep this ordered: build hooks first, completion before LSP, UI before statusline.
+
+require('plugins.build')
+require('plugins.misc')
+require('plugins.ui')
+require('plugins.git')
+require('plugins.neo-tree')
+require('plugins.telescope')
+require('plugins.completion')
+require('plugins.lsp')
+require('plugins.formatting')
+require('plugins.treesitter')
+require('plugins.lualine')
+require('plugins.blankline')
+require('plugins.snacks')
+require('plugins.showkeys')
+require('plugins.markdown-preview')
