@@ -42,7 +42,7 @@ alias clear='clear && fastfetch'
 alias platio='source ~/.platformio/penv/bin/activate'
 alias gitAC='git add . && git commit -m'
 
-# Example: pio-init Project-name --board uno
+# Example: pio-init Project-name --board seeed_xiao_esp32c3
 pio-init() {
   if [[ -z "$1" ]]; then
     echo "Usage: pio-init <project_name> [pio args]"
@@ -56,24 +56,11 @@ pio-init() {
   cd "$PROJECT_NAME" || return 1
   echo "📂 Created project: $PROJECT_NAME"
 
+  # Initialize the PlatformIO project
   pio project init "$@" || return 1
-  pio run -t compiledb || return 1
 
-  ENV_NAME=$(grep -oP '(?<=\[env:).*(?=\])' platformio.ini | head -n1)
-  SRC_ENV=".pio/build/$ENV_NAME/compile_commands.json"
-  SRC_ROOT="compile_commands.json"
-  DEST="compile_commands.json"
-
-  if [[ -f "$SRC_ENV" ]]; then
-    ln -sf "$SRC_ENV" "$DEST"
-    echo "✅ Linked compile_commands.json from $SRC_ENV"
-  elif [[ -f "$SRC_ROOT" ]]; then
-    echo "✅ compile_commands.json already in project root"
-  else
-    echo "⚠️ compile_commands.json not found. Try: pio run -t compiledb again"
-  fi
-
-  # Add starter file if none exists
+  # 1. Create starter file FIRST so PlatformIO has code to put in the database!
+  mkdir -p src
   if [[ ! -f "src/main.cpp" ]]; then
     cat <<'EOF' > src/main.cpp
 #include <Arduino.h>
@@ -91,11 +78,32 @@ EOF
     echo "📝 Created src/main.cpp starter file"
   fi
 
+  # 2. Create PlatformIO script to force-include toolchain headers
+  cat <<'EOF' > add_toolchain.py
+Import("env")
+env.Replace(COMPILATIONDB_INCLUDE_TOOLCHAIN=True)
+EOF
+
+  # 3. Register the script in platformio.ini
+  if ! grep -q "add_toolchain.py" platformio.ini; then
+    echo "extra_scripts = pre:add_toolchain.py" >> platformio.ini
+  fi
+
+  # 4. Generate the compilation database NOW that main.cpp exists!
+  echo "🔨 Generating compilation database with toolchain headers..."
+  pio run -t compiledb || return 1
+
+  # 5. Strip out embedded GCC flags that clangd doesn't recognize
+  if [[ -f "compile_commands.json" ]]; then
+    sed -i 's/"-fstrict-volatile-bitfields",//g; s/-fstrict-volatile-bitfields//g' compile_commands.json
+    sed -i 's/"-fno-tree-switch-conversion",//g; s/-fno-tree-switch-conversion//g' compile_commands.json
+    echo "✨ Cleaned and optimized compile_commands.json for clangd"
+  fi
+
   # Open project in Neovim
   echo "🚀 Opening Neovim..."
   nvim src/main.cpp
 }
-
 alias docker-clean=' \
   docker container prune -f ; \
   docker image prune -f ; \
