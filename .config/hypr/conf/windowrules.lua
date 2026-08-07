@@ -5,13 +5,14 @@
 hl.window_rule({
     name  = "flameshot-windowRule",
     match = {
-        class = "^(flameshot)",
-        fullscreen_state_internal = 0,
-        fullscreen_state_client = 3,
+        class = "^(flameshot)$",
     },
     float = true,
-    move = { 0, 0 },
+    center = true,
     pin = true,
+    no_shadow = true,
+    border_size = 0,
+    rounding = 0,
 })
 
 hl.window_rule({

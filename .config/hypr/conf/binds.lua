@@ -151,9 +151,9 @@ hl.bind(mainMod .. " + " .. "H", hl.dsp.focus({ workspace = "m-1" }))
 -- Left
 hl.bind(mainMod .. " + " .. "L", hl.dsp.focus({ workspace = "r+1" }))
 
--- Move active window to next/previous monitor
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.exec_cmd("hyprctl dispatch movecurrentworkspacetomonitor +1"))
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.exec_cmd("hyprctl dispatch movecurrentworkspacetomonitor -1"))
+-- Move active workspace to next/previous monitor
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.workspace.move({ monitor = "r" }))
+hl.bind(mainMod .. " + SHIFT + left", hl.dsp.workspace.move({ monitor = "l" }))
 
 -- Scroll workspaces 
 hl.bind(mainMod .. " + " .. "mouse_up", hl.dsp.focus({ workspace = "e-1" }))
@@ -168,3 +168,7 @@ hl.bind(mainMod .. " + " .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
 
 -- Move window
 hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- bring up notifications (Caelestia)
+hl.bind(mainMod .. "+" .. 'N', hl.dsp.exec_cmd("qs -c caelestia ipc call drawers toggle sidebar"))
+
