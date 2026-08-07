@@ -50,6 +50,19 @@
         },
         {
           "properties": {
+            "cache_duration": "none",
+            "display_mode": "context",
+            "fetch_virtual_env": true
+          },
+          "template": "{{ if .Venv }} \ue235 {{ .Venv }} {{ end }}",
+          "foreground": "#2E3440",
+          "powerline_symbol": "\ue0b0",
+          "background": "#6ecc89",
+          "type": "python",
+          "style": "powerline"
+        },
+        {
+          "properties": {
             "always_enabled": true,
             "cache_duration": "none"
           },
