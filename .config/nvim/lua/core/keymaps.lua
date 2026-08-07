@@ -49,3 +49,4 @@ vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 -- Toggle line wrapping.
 vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', { desc = 'Toggle line wrap' })
 
+

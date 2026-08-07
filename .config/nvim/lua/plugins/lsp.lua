@@ -84,10 +84,11 @@ local servers = {
   clangd = {
     cmd = {
       vim.fn.expand('$HOME') .. '/.local/share/nvim/mason/bin/clangd',
-      '--query-driver=/usr/bin/**',
+      '--background-index',
+      '--clang-tidy',
     },
     root_markers = { 'platformio.ini', '.git' },
-  },
+  }, 
 
   qmlls = {
     cmd = { 'qmlls6' },
