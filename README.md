@@ -20,11 +20,17 @@ makepkg -si
 ---
 ### apps I use
 ```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord ruby tree alsa-utils nwg-look gnome-themes-extra nextcloud-client gpu-screen-recorder gpu-screen-recorder-ui gpu-screen-recorder-notification superfile
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord ruby tree alsa-utils nwg-look gnome-themes-extra nextcloud-client gpu-screen-recorder gpu-screen-recorder-ui gpu-screen-recorder-notification superfile tree-sitter-cli
 ```
 ```bash
 yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker ventoy-bin ventoy-bin ttf-vista-fonts
 ```
+### Other apps
+```bash
+sudo pacman -S intel-media-driver vulkan-intel mesa qt6-wayland
+```
+
+
 ---
 ### OpenSSH
 ####  Start SSH daemon
@@ -346,13 +352,34 @@ sudo pacman -S obs-studio v4l2loopback-dkms linux-headers
 Load the module to create a virtual device:
 ```
 sudo modprobe v4l2loopback exclusive_caps=1 card_label="OBS Virtual Camera"
-
+```
+## Load your graphics driver during the initramfs stage 
+```bash
+sudo nvim /etc/mkinitcpio.conf
+```
+#### NVIDIA:
+```Bash
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+```
+#### AMD:
+```bash
+MODULES=(amdgpu)
+```
+#### Intel:
+```bash
+MODULES=(i915)
 ```
 
+### Rebuild initramfs image
+```bash
+sudo mkinitcpio -P
+```
 
 
 # ToDo
 - [ ] Re-organize README
 - [ ] Add README summery/Description
 - [ ] Redo SDDM-greeter
+- [ ] Get rid of old apps I dont use
+- [ ] get rid of old system stuff I dont use
 - [ ] Get a Keyring manager so Nextcloud stops bugging me on login
