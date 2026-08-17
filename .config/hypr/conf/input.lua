@@ -12,7 +12,7 @@ hl.config({
             disable_while_typing = false,
             tap_to_click = true,
         },
-        sensitivity = -0.5,
+        sensitivity = 0,
         -- -1.0 - 1.0, 0 means no modification.
     },
 })

@@ -18,6 +18,12 @@ hl.env("__GL_VR_ALLOWED", 0)
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", 1)
+-- Force Qt Quick to use hardware acceleration via Vulkan
+hl.env("QMLSCENE_DEVICE", "vulkan")
+
+-- Ensure the integrated Intel card is preferred for desktop rendering
+-- hl.env("__EGL_VENDOR_LIBRARY_FILENAMES", "/usr/share/glvnd/egl_vendor.d/50_intel.json")
+
 --env = QT_AUTO_SCREEN_SCALE_FACTOR,1
 hl.env("GDK_SCALE", 1)
 hl.env("MOZ_ENABLE_WAYLAND", 1)

@@ -6,12 +6,13 @@ hl.config({
     misc = {
         disable_hyprland_logo = false,
         disable_splash_rendering = false,
+        vrr = 0,
     },
 })
 
 hl.config({
     debug = {
-        vfr = true,
         -- Controls VFR status
+        vfr = true,
     },
 })
