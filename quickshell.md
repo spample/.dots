@@ -28,8 +28,8 @@ yay -S --needed --noconfirm \
   quickshell-git\
   app2unit\
   libcava
-  yay -S colloid-icon-theme-git
-```
+yay -S colloid-icon-theme-git
+``````
 
 ## Quickshell Celestia clone:
 - clone the repo into quickshell folder in config
@@ -42,4 +42,11 @@ cd caelestia
 cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/
 cmake --build build
 sudo cmake --install build
+```
+
+
+## Updating
+```bash
+cd $XDG_CONFIG_HOME/quickshell/caelestia
+git pull
 ```
