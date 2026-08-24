@@ -20,7 +20,7 @@ makepkg -si
 ---
 ### apps I use
 ```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord ruby tree alsa-utils nwg-look gnome-themes-extra nextcloud-client gpu-screen-recorder gpu-screen-recorder-ui gpu-screen-recorder-notification superfile tree-sitter-cli
+sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord ruby tree alsa-utils nwg-look gnome-themes-extra nextcloud-client gpu-screen-recorder gpu-screen-recorder-ui gpu-screen-recorder-notification superfile tree-sitter-cli gnome-keyring libsecret seahorse
 ```
 ```bash
 yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker ventoy-bin ventoy-bin ttf-vista-fonts
@@ -346,7 +346,7 @@ ROS 2
 yay -S ros2-humble 
 ```
 obs-virt-cam
-```
+```056990
 sudo pacman -S obs-studio v4l2loopback-dkms linux-headers
 ```
 Load the module to create a virtual device:
@@ -373,6 +373,29 @@ MODULES=(i915)
 ### Rebuild initramfs image
 ```bash
 sudo mkinitcpio -P
+```
+### Setting up Keyring
+open file:
+```bash
+sudo nvim /etc/pam.d/login
+```
+
+paste this:
+```bash
+#%PAM-1.0
+
+auth       requisite    pam_nologin.so
+auth       include      system-local-login
+auth       optional     pam_gnome_keyring.so
+
+account    include      system-local-login
+
+session    include      system-local-login
+session    optional     pam_gnome_keyring.so auto_start
+
+password   include      system-local-login
+password   optional    pam_gnome_keyring.so
+
 ```
 
 
