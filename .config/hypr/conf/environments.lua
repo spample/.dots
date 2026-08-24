@@ -34,7 +34,7 @@ hl.env("OZONE_PLATFORM", "wayland")
 hl.env("XCURSOR_SIZE", 24)
 hl.env("XCURSOR_THEME", "nordicCursor")
 hl.env("HYPRCURSOR_SIZE", 24)
-hl.env("HYPRCURSOR_THEME", "nordicCursor")
+hl.env("HYPRCURSOR_THEME", "Nordzy-hyprcursors")
 hl.env("APPIMAGELAUNCHER_DISABLE", 1)
 
 hl.config({
