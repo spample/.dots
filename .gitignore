@@ -8,6 +8,10 @@
 .config/clipse/clipboard_history.json
 .config/clipse/clipse.log
 
+# Hypr
+.config/hypr/scheme/
+
+
 # Quickshell
 .config/quickshell/
 
