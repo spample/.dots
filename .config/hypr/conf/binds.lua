@@ -52,7 +52,7 @@ hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("zen-browser"))
 --hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "J", hl.dsp.exec_cmd("wpaperctl previous"))
 
 -- Disable Touchpad (Laptop)
-hl.bind(mainMod .. " + " .. "CONTROL" .. " + " .. "code:202", hl.dsp.exec_cmd("/home/spample/.config/hypr-stuff/scripts/toggle-touchpad.sh"))
+hl.bind("XF86TouchpadToggle", hl.dsp.exec_cmd("/home/spample/.config/hypr-stuff/scripts/toggle-touchpad.sh"))
 
 -- Raise Volume
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"))
@@ -74,7 +74,10 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"))
 hl.bind("XF86Refresh", hl.dsp.exec_cmd("xdotool key F5"))
 
 -- Capture focused window
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "S", hl.dsp.exec_cmd("QT_SCALE_FACTOR=1 XDG_CURRENT_DESKTOP=hyprland flameshot gui"))
+hl.bind(
+	mainMod .. " + " .. "SHIFT" .. " + " .. "S",
+	hl.dsp.exec_cmd("QT_SCALE_FACTOR=1 XDG_CURRENT_DESKTOP=hyprland flameshot gui")
+)
 
 -- Bind to start and stop recording the entire screen
 --bind = $mainMod, R, exec, wf-recorder -f ~/Videos/recording.mp4 -g "$(slurp)"
@@ -98,7 +101,6 @@ hl.bind(mainMod .. " + " .. "up", hl.dsp.focus({ direction = "up" }))
 
 -- Move focus down
 hl.bind(mainMod .. " + " .. "down", hl.dsp.focus({ direction = "down" }))
-
 
 -- Switch workspaces with mainMod + [0-9]
 hl.bind(mainMod .. " + " .. 1, hl.dsp.focus({ workspace = 1 }))
@@ -155,7 +157,7 @@ hl.bind(mainMod .. " + " .. "L", hl.dsp.focus({ workspace = "r+1" }))
 hl.bind(mainMod .. " + SHIFT + right", hl.dsp.workspace.move({ monitor = "r" }))
 hl.bind(mainMod .. " + SHIFT + left", hl.dsp.workspace.move({ monitor = "l" }))
 
--- Scroll workspaces 
+-- Scroll workspaces
 hl.bind(mainMod .. " + " .. "mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move active window to a special "hidden" workspace
@@ -170,5 +172,4 @@ hl.bind(mainMod .. " + " .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- bring up notifications (Caelestia)
-hl.bind(mainMod .. "+" .. 'N', hl.dsp.exec_cmd("qs -c caelestia ipc call drawers toggle sidebar"))
-
+hl.bind(mainMod .. "+" .. "N", hl.dsp.exec_cmd("qs -c caelestia ipc call drawers toggle sidebar"))
