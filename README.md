@@ -1,5 +1,24 @@
-#   This are the steps!!
+<div align="center">
 
+# Personal Dots `Asus-Zenbook-S16`
+### ✦ Arch Linux • Hyprland ✦
+
+[![OS: Arch Linux](https://shields.io)](https://archlinux.org)
+[![WM: Hyprland](https://shields.io)](https://hyprland.org)
+[![Author: Luis Gonzalez](https://shields.io)](https://github.com)
+
+*Personal Dots Configured for the Asus-ZenBook S16*
+
+---
+
+### 🔍 Preview
+
+![Desktop Preview](./misc/dots_preview.png)
+
+</div>
+
+
+# Getting Started
 ### Update packages
 ```bash
 sudo pacman -Syu
@@ -13,6 +32,7 @@ sudo pacman -S --needed base-devel git
 mkdir -p $HOME/Documents/github
 cd $HOME/Documents/github
 git clone https://aur.archlinux.org/yay.git
+```
 ```bash
 cd yay
 makepkg -si 
@@ -20,16 +40,11 @@ makepkg -si
 ---
 ### apps I use
 ```bash
-sudo pacman -S --needed hyprpaper waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils libreoffice-fresh zip kicad kicad-library kicad-library-3d sl firefox kitty cmake flameshot vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord ruby tree alsa-utils nwg-look gnome-themes-extra nextcloud-client gpu-screen-recorder gpu-screen-recorder-ui gpu-screen-recorder-notification superfile tree-sitter-cli gnome-keyring libsecret seahorse
+sudo pacman -S --needed waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils inetutils zip kicad kicad-library kicad-library-3d sl firefox kitty cmake vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord ruby tree alsa-utils nwg-look gnome-themes-extra nextcloud-client superfile tree-sitter-cli gnome-keyring libsecret seahorse zoxide wl-clipboard
 ```
 ```bash
-yay -S --needed wlogout hyprshot gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker ventoy-bin ventoy-bin ttf-vista-fonts onlyoffice-bin
+yay -S --needed wlogout gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker ventoy-bin ventoy-bin ttf-vista-fonts onlyoffice-bin
 ```
-### Other apps
-```bash
-sudo pacman -S intel-media-driver vulkan-intel mesa qt6-wayland
-```
-
 
 ---
 ### OpenSSH
@@ -60,11 +75,11 @@ eval "$(ssh-agent -s)"
 ```bash
 ssh-keygen -t ed25519 -C luis.antonio.gonzalez501@gmail.com
 ```
-#### copy key in Linux(X11)
+#### copy key in Linux (X11)
 ```bash
 xclip -selection clipboard $HOME/.ssh/id_ed25519.pub 
 ```
-#### copy key in Linux(Wayland)
+#### copy key in Linux (Wayland)
 ```bash
 cat $HOME/.ssh/id_ed25519.pub | wl-copy
 ```
@@ -98,7 +113,7 @@ fc-list | grep "FiraCode Nerd Font Mono"
 mkdir -p $HOME/Documents/github
 cd $HOME/Documents/github
 ```
-### Installs font bulk download & downloads it ~2-3 GB!
+### Installs font bulk download & downloads it (big download!)
 ```bash
 git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
 
@@ -128,9 +143,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 yay -S oh-my-posh
 ```
 #### zinit
-```bash
-sudo pacman -S zoxide
-```
 ```bash
 git clone https://github.com/zdharma-continuum/zinit.git $HOME/.local/share/zinit/zinit.git
 ```
