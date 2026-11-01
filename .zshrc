@@ -37,10 +37,10 @@ add-zsh-hook precmd save_history_to_file
 #######################################
 alias cp='cp -i'
 alias mv='mv -i'
-#alias mkdir='mkdir -p'
 alias clear='clear && fastfetch'
 alias platio='source ~/.platformio/penv/bin/activate'
 alias gitAC='git add . && git commit -m'
+alias ls='ls -h --color=auto'
 
 # Example: pio-init Project-name --board seeed_xiao_esp32c3
 pio-init() {
@@ -263,6 +263,9 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 
+# Vivado path
+export PATH="/opt/Xilinx/2026.1/Vivado/bin:$PATH"
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -273,6 +276,8 @@ source $HOME/.config/nvm/nvm.sh
 export VCPKG_ROOT="$HOME/vcpkg"
 export VCPKG_DISABLE_METRICS=1
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
+export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
 
 nvm() {

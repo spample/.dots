@@ -31,7 +31,7 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 hl.env("OZONE_PLATFORM", "wayland")
 
 -- --- Appearance & Misc ---
-hl.env("XCURSOR_SIZE", 24)
+hl.env("XCURSOR_SIZE", 48)
 hl.env("XCURSOR_THEME", "nordicCursor")
 hl.env("HYPRCURSOR_SIZE", 24)
 hl.env("HYPRCURSOR_THEME", "Nordzy-hyprcursors")
