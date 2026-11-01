@@ -1,6 +1,5 @@
--- LSP, Mason tool installation, and LSP-specific keymaps.
+-- LSP, Mason tool installation, and C/C++ IDE mappings.
 
--- Install LSP-related plugins.
 vim.pack.add({
   'https://github.com/j-hui/fidget.nvim',
   'https://github.com/neovim/nvim-lspconfig',
@@ -9,18 +8,15 @@ vim.pack.add({
   'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
 })
 
--- LSP status UI and external tool manager.
 require('fidget').setup({})
 require('mason').setup({})
 
--- Capabilities tell LSP servers what completion features Neovim supports.
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local ok, blink = pcall(require, 'blink.cmp')
 if ok then
   capabilities = blink.get_lsp_capabilities(capabilities)
 end
 
--- Buffer-local LSP mappings and behavior.
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('custom-lsp-attach', { clear = true }),
   callback = function(event)
@@ -32,42 +28,40 @@ vim.api.nvim_create_autocmd('LspAttach', {
       })
     end
 
-    -- Common LSP actions.
-    map('grn', vim.lsp.buf.rename, 'Rename')
-    map('gra', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
-    map('grD', vim.lsp.buf.declaration, 'Goto Declaration')
     map('gd', vim.lsp.buf.definition, 'Goto Definition')
+    map('gD', vim.lsp.buf.declaration, 'Goto Declaration')
     map('gr', vim.lsp.buf.references, 'References')
     map('K', vim.lsp.buf.hover, 'Hover Documentation')
+    map('<F2>', vim.lsp.buf.rename, 'Rename Symbol')
+    map('grn', vim.lsp.buf.rename, 'Rename Symbol')
+    map('<A-CR>', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
+    map('gra', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
+    map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+    map('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
+    map('<leader>ci', vim.lsp.buf.incoming_calls, '[C]alls [I]ncoming')
+    map('<leader>co', vim.lsp.buf.outgoing_calls, '[C]alls [O]utgoing')
 
     local client = vim.lsp.get_client_by_id(event.data.client_id)
 
-    -- Highlight references under the cursor when the server supports it.
+    if client and client.name == 'clangd' then
+      map('<leader>ch', '<cmd>LspClangdSwitchSourceHeader<CR>', '[C]++ Source/[H]eader')
+      map('<leader>cs', '<cmd>LspClangdShowSymbolInfo<CR>', '[C]langd [S]ymbol Info')
+    end
+
     if client and client:supports_method('textDocument/documentHighlight', event.buf) then
       local group = vim.api.nvim_create_augroup('custom-lsp-highlight', { clear = false })
-
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         buffer = event.buf,
         group = group,
         callback = vim.lsp.buf.document_highlight,
       })
-
       vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
         buffer = event.buf,
         group = group,
         callback = vim.lsp.buf.clear_references,
       })
-
-      vim.api.nvim_create_autocmd('LspDetach', {
-        group = vim.api.nvim_create_augroup('custom-lsp-detach', { clear = true }),
-        callback = function(event2)
-          vim.lsp.buf.clear_references()
-          vim.api.nvim_clear_autocmds({ group = 'custom-lsp-highlight', buffer = event2.buf })
-        end,
-      })
     end
 
-    -- Toggle inlay hints when supported by the attached server.
     if client and client:supports_method('textDocument/inlayHint', event.buf) then
       map('<leader>th', function()
         vim.lsp.inlay_hint.enable(
@@ -79,44 +73,54 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- Language server settings.
 local servers = {
   clangd = {
     cmd = {
       vim.fn.expand('$HOME') .. '/.local/share/nvim/mason/bin/clangd',
       '--background-index',
       '--clang-tidy',
+      '--completion-style=detailed',
+      '--header-insertion=iwyu',
     },
-    root_markers = { 'platformio.ini', '.git' },
-  }, 
+    root_markers = {
+      '.clangd',
+      '.clang-tidy',
+      '.clang-format',
+      'compile_commands.json',
+      'compile_flags.txt',
+      'CMakeLists.txt',
+      'Makefile',
+      'makefile',
+      'platformio.ini',
+      '.git',
+    },
+    init_options = {
+      usePlaceholders = true,
+      completeUnimported = true,
+      clangdFileStatus = true,
+    },
+  },
 
   qmlls = {
     cmd = { 'qmlls6' },
     root_markers = { '.qmlls.ini', 'qmlproject', '.git' },
   },
-
   gopls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   cssls = {},
   dockerls = {},
   jsonls = {},
   yamlls = {},
-
   lua_ls = {
     on_init = function(client)
       client.server_capabilities.documentFormattingProvider = false
-
       if client.workspace_folders then
         local path = client.workspace_folders[1].name
-        if
-          path ~= vim.fn.stdpath('config')
-          and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
-        then
+        if path ~= vim.fn.stdpath('config')
+          and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then
           return
         end
       end
-
-      -- Make lua_ls understand Neovim config files and runtime APIs.
       client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
         runtime = {
           version = 'LuaJIT',
@@ -131,25 +135,23 @@ local servers = {
         },
       })
     end,
-    settings = {
-      Lua = {
-        format = { enable = false },
-      },
-    },
+    settings = { Lua = { format = { enable = false } } },
   },
 }
 
--- Install LSP servers plus extra formatter tools through Mason.
 local ensure_installed = vim.tbl_keys(servers)
 vim.list_extend(ensure_installed, {
   'stylua',
+  'clang-format',
+  'codelldb',
 })
 
 require('mason-tool-installer').setup({
   ensure_installed = ensure_installed,
+  auto_update = false,
+  run_on_start = true,
 })
 
--- Register and enable every configured server.
 for name, config in pairs(servers) do
   config.capabilities = capabilities
   vim.lsp.config(name, config)

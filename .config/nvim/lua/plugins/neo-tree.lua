@@ -1,11 +1,11 @@
 -- Neo-tree file explorer.
 
 -- Install Neo-tree and its required dependencies.
-vim.pack.add({
-  { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim', version = vim.version.range('*') },
+vim.pack.add {
+  { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim', version = vim.version.range '*' },
   'https://github.com/nvim-lua/plenary.nvim',
   'https://github.com/MunifTanjim/nui.nvim',
-})
+}
 
 -- Open/reveal the current file in Neo-tree.
 vim.keymap.set('n', '\\', '<cmd>Neotree reveal<CR>', {
@@ -14,8 +14,9 @@ vim.keymap.set('n', '\\', '<cmd>Neotree reveal<CR>', {
 })
 
 -- Filesystem window settings.
-require('neo-tree').setup({
+require('neo-tree').setup {
   filesystem = {
+    use_libuv_file_watcher = true,
     window = {
       width = 30,
       mappings = {
@@ -23,4 +24,4 @@ require('neo-tree').setup({
       },
     },
   },
-})
+}

@@ -5,9 +5,6 @@ vim.pack.add({
   -- Tmux navigation.
   'https://github.com/christoomey/vim-tmux-navigator',
 
-  -- Detect shiftwidth/tabstop automatically.
-  'https://github.com/tpope/vim-sleuth',
-
   -- Git commands and GitHub integration.
   'https://github.com/tpope/vim-fugitive',
   'https://github.com/tpope/vim-rhubarb',

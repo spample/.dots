@@ -11,6 +11,7 @@ vim.pack.add({
 local parsers = {
   'bash',
   'c',
+  'cpp',
   'diff',
   'html',
   'css',
