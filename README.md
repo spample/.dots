@@ -2,12 +2,9 @@
 
 # Personal Dots `Asus-Zenbook-S16`
 ### ✦ Arch Linux • Hyprland ✦
+*Personal Dots Configured for the **Asus-ZenBook S16***
 
-[![OS: Arch Linux](https://shields.io)](https://archlinux.org)
-[![WM: Hyprland](https://shields.io)](https://hyprland.org)
-[![Author: Luis Gonzalez](https://shields.io)](https://github.com)
-
-*Personal Dots Configured for the Asus-ZenBook S16*
+By: **Luis Gonzalez**
 
 ---
 
@@ -18,7 +15,12 @@
 </div>
 
 
-# Getting Started
+<div align="center">
+    <h1>
+        Getting Started
+    </h1>
+</div>
+
 ### Update packages
 ```bash
 sudo pacman -Syu
@@ -386,7 +388,7 @@ MODULES=(i915)
 ```bash
 sudo mkinitcpio -P
 ```
-### Setting up Keyring
+## Setting up Keyring
 open file:
 ```bash
 sudo nvim /etc/pam.d/login
@@ -410,7 +412,20 @@ password   optional    pam_gnome_keyring.so
 
 ```
 
-### Tmux-plugins temp fixes
+
+## Fixing OLED/AMD Graphics Freeze on Boot
+open `/etc/kernel/cmdline`
+
+type:
+```bash
+root=PARTUUID=4b0ce474-8f54-49e6-9474-7244365e3632 zswap.enabled=0 rootflags=subvol=@ rw rootfstype=btrfs amdgpu.dcdebugmask=0x400
+```
+Rebuilt UKI
+```bash
+sudo mkinitcpio -P
+```
+
+## Tmux-plugins temp fixes
 #### Remove empty directories
 ```bash
 rm -rf ~/.tmux/plugins/tmux-resurrect ~/.tmux/plugins/tmux-continuum
