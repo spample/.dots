@@ -10,7 +10,10 @@ By: **Luis Gonzalez**
 
 ### 🔍 Preview
 
-![Desktop Preview](./misc/dots_preview.png)
+
+| ![Desktop Preview 1](./misc/imgPreviews/dots_preview1.png) | ![Desktop Preview 2](./misc/imgPreviews/dots_preview2.png) |
+| :---: | :---: |
+| ![Desktop Preview 3](./misc/imgPreviews/dots_preview3.png) | ![Desktop Preview 4](./misc/imgPreviews/dots_preview4.png) |
 
 </div>
 
@@ -443,6 +446,21 @@ rm -rf ~/.tmux/plugins/tmux-resurrect ~/.tmux/plugins/tmux-continuum
 ```bash
 ~/.tmux/plugins/tpm/bin/install_plugins
 ```
+## Disabling SDDM/Display Manager
+#### Step 1. stop sddm from running
+```bash
+sudo systemctl disable sddm
+```
+#### Step 2. Configure Zsh to Autostart Hyprland
+Ensure, this:
+```bash
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    exec Hyprland
+fi
+```
+is in `.zprofile`
+#### Step 3. Reboot and Verify
+#### Step 4. Clean Up
 
 
 # ToDo
