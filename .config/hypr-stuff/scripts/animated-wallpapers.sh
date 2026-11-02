@@ -1,7 +1,8 @@
 #!/bin/bash
 
 DIR="$HOME/.config/hypr-stuff/wallpapers/animated/"
-INTERVAL=10
+# 600 = 600 sec = 10 min
+INTERVAL=600
 SOCKET="/tmp/mpvsocket"
 
 # Start the very first wallpaper and open the IPC socket
