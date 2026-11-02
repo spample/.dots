@@ -74,10 +74,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"))
 hl.bind("XF86Refresh", hl.dsp.exec_cmd("xdotool key F5"))
 
 -- Capture focused window
-hl.bind(
-	mainMod .. " + " .. "SHIFT" .. " + " .. "S",
-	hl.dsp.exec_cmd("QT_SCALE_FACTOR=1 XDG_CURRENT_DESKTOP=hyprland flameshot gui")
-)
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 
 -- Bind to start and stop recording the entire screen
 --bind = $mainMod, R, exec, wf-recorder -f ~/Videos/recording.mp4 -g "$(slurp)"
