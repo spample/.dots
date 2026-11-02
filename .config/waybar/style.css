@@ -1,131 +1,65 @@
-@import "mocha.css";
-
-/* thing: up right down left*/
-
+@import "../../.cache/wal/colors-waybar.css";
 
 * {
-  font-family: "FiraCode Nerd Font", "JetBrains Mono", monospace;
-  font-size: 15px;
-  min-height: 0;
-  font-weight: 500;
+    font-family: "FiraCode Nerd Font", "JetBrains Mono", monospace;
+    font-size: 15px;
+    font-weight: 500;
+    min-height: 0;
+    border: none;
 }
 
-#waybar {
-  background: transparent;
-  color: @text;
-  margin: 5px 5px;
+window#waybar {
+    background: transparent;
+    color: @color15;
 }
 
-#workspaces {
-  border-radius: 16px;
-  margin: 5px;
-  background-color: @surface0;
-  margin-left: 16px;
-  padding-right: 10px;
-  padding-left: 5px;
-  font-size: 20;
+/* Floating Pill Design for all modules */
+#workspaces, #window, #clock, #network, #bluetooth, #pulseaudio, 
+#backlight, #battery, #tray, #custom-notification, #custom-exit {
+    background-color: @color0;
+    color: @color15;
+    border-radius: 16px;
+    padding: 4px 14px;
+    margin: 4px 4px;
 }
 
+/* Workspaces Configuration */
 #workspaces button {
-  color: @lavender;
-  border-radius: 16px;
-  padding: 5px;
+    color: @color7;
+    padding: 0px 6px;
+    border-radius: 16px;
+    transition: all 0.2s ease-in-out;
 }
-
 #workspaces button.active {
-  color: @sky;
-  border-radius: 16px;
+    color: @color4; /* Dynamic Blue/Accent */
 }
-
 #workspaces button:hover {
-  color: @sapphire;
-  border-radius: 16px;
-}
-#custom-notification,
-#network,
-#bluetooth,
-#tray,
-#backlight,
-#clock,
-#battery,
-#pulseaudio,
-#custom-lock,
-#custom-exit,
-#custom-brightness {
-  background-color: @surface0;
-  padding: 2px 16px 2px 14px;
-  margin: 0;
+    background-color: @color2;
+    color: @color0;
 }
 
-#clock {
-  color: @blue;
-  border-radius: 0px 16px 16px 0px;
-  margin-right: 8px;
+/* Dynamic Hardware Colors */
+#clock { color: @color4; font-weight: bold; }
+#battery { color: @color2; }
+#battery.charging { color: @color2; }
+#battery.warning:not(.charging) { color: @color3; }
+
+/* Blinking Critical Battery Alert */
+#battery.critical:not(.charging) { 
+    color: @color1; 
+    animation: blink 0.5s linear infinite alternate; 
 }
 
-#battery {
-  color: @green;
-}
+#backlight { color: @color3; }
+#pulseaudio { color: @color6; }
+#network { color: @color5; }
+#bluetooth { color: @color4; }
+#custom-notification { color: @color6; }
+#custom-exit { color: @color1; padding: 4px 18px; }
 
-#battery.charging {
-  color: @green;
-}
-
-#battery.warning:not(.charging) {
-  color: @red;
-}
-
-#backlight {
-  color: @yellow;
-}
-
-#backlight, #battery {
-  border-radius: 0;
-}
-
-#bluetooth {
-  color: @blue;
-  border-radius: 0px 16px 16px 00px;
-  margin-right: 8px;
-}
-
-#network {
-  color: #c5a6ff;
-  border-radius: 16px 0px 0px 16px;
-  margin-right: 0px;
-}
-
-#pulseaudio {
-  color: @teal;
-  border-radius: 16px 0px 0px 16px;
-}
-
-#custom-lock {
-  border-radius: 16px 0px 0px 16px;
-  color: @lavender;
-}
-
-#custom-exit {
-  margin-right: 16px;
-  border-radius: 16px 16px 16px 16px;
-  color: @red;
-}
-
-#tray {
-  margin-right: 8px;
-  border-radius: 0px 16px 16px 0px;
-}
-
-#custom-notification{
-  color: @teal;
-  border-radius: 16px 0px 0px 16px;
-}
-
-#custom-brightness {
-  color: @yellow;
-  border-radius: 0px 0px 0px 0px;
-}
-
-#window {
-  margin-left: 20px
+@keyframes blink {
+    to {
+        background-color: @color1;
+        color: @color0;
+    }
 }

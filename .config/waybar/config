@@ -1,33 +1,113 @@
 {
     "layer": "top",
-    "margin-top": 14,
+    "position": "top",
+    "margin-top": 8,
     "margin-bottom": 0,
     "margin-left": 14,
-    "margin-right": 14,    
+    "margin-right": 14,
     "spacing": 0,
-    "position": "top",
 
-    // Load Modules
-    "include": [
-        "$HOME/.config/waybar/modules.json",
-        "$HOME/.config/hypr-stuff/settings/waybar-quicklinks.json"
-    ],
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window"
     ],
     "modules-center": [
-        
+        "clock"
     ],
     "modules-right": [
-        "network", 
+        "tray",
+        "network",
         "bluetooth",
         "pulseaudio",
-        "custom/brightness",
-        "battery", 
-        "tray",
+        "backlight",
+        "battery",
         "custom/notification",
-        "clock",
         "custom/exit"
-    ]
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "󰹕",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "default": ""
+        },
+        "persistent-workspaces": { "*": 5 }
+    },
+    "hyprland/window": {
+        "format": "{class}",
+        "max-length": 50,
+        "rewrite": {
+            "": "Desktop"
+        }
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀  {ipaddr}",
+        "format-disconnected": "󰤮  Offline",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "on-click": "$HOME/.config/hypr-stuff/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}",
+        "on-click": "blueman-manager"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 Muted",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/exit": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "$HOME/.dots/.config/rofi/powermenu/type-5/powermenu.sh"
+    }
 }

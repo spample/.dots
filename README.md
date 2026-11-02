@@ -45,7 +45,7 @@ makepkg -si
 sudo pacman -S --needed waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils inetutils zip kicad kicad-library kicad-library-3d sl firefox kitty cmake vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord ruby tree alsa-utils nwg-look gnome-themes-extra nextcloud-client superfile tree-sitter-cli gnome-keyring libsecret seahorse zoxide wl-clipboard swappy grim slurp socat jq
 ```
 ```bash
-yay -S --needed wlogout gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker ventoy-bin ventoy-bin ttf-vista-fonts onlyoffice-bin mpvpaper mpvpaper-stop-git
+yay -S --needed wlogout gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker ventoy-bin ventoy-bin ttf-vista-fonts onlyoffice-bin mpvpaper mpvpaper-stop-git python-pywal16
 ```
 
 ---
@@ -183,6 +183,15 @@ or for force link run `stow . --adopt --override --restow`
 make sure to have the dots on the home directory
 
 
+## Waybar Color-Gen Files
+Create cache Dir
+```bash
+mkdir -p ~/.cache/wal && touch ~/.cache/wal/colors-waybar.css
+```
+alternatively, you can switch the waybar autostart with this:
+```bash
+hl.exec_once("mkdir -p ~/.cache/wal && touch ~/.cache/wal/colors-waybar.css && waybar")
+```
 ##  keyd installation
 ```bash
 cd ~/Documents/github
