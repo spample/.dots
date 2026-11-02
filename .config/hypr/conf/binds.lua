@@ -46,10 +46,15 @@ hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("zen-browser"))
 --hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "W", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr-stuff/scripts/reload-hyprpaper.sh"))
 
 -- Next Wallpaper
---hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "K", hl.dsp.exec_cmd("wpaperctl next"))
-
+hl.bind(
+	mainMod .. "+" .. "ALT" .. "+" .. "right",
+	hl.dsp.exec_cmd("sh -c '/home/spample/.config/hypr-stuff/scripts/animated-wallpapers.sh next'")
+)
 -- Previous Wallpaper
---hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "J", hl.dsp.exec_cmd("wpaperctl previous"))
+hl.bind(
+	mainMod .. "+" .. "ALT" .. "+" .. "left",
+	hl.dsp.exec_cmd("sh -c '/home/spample/.config/hypr-stuff/scripts/animated-wallpapers.sh prev'")
+)
 
 -- Disable Touchpad (Laptop)
 hl.bind("XF86TouchpadToggle", hl.dsp.exec_cmd("/home/spample/.config/hypr-stuff/scripts/toggle-touchpad.sh"))
