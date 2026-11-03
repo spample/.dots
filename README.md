@@ -15,8 +15,7 @@ By: **Luis Gonzalez**
 | :---: | :---: |
 | ![Desktop Preview 3](./misc/imgPreviews/dots_preview3.png) | ![Desktop Preview 4](./misc/imgPreviews/dots_preview4.png) |
 
-</div>
-
+> All wallpapers made by [waneella](https://www.patreon.com/cw/waneella)
 
 <div align="center">
     <h1>
@@ -45,7 +44,7 @@ makepkg -si
 ---
 ### apps I use
 ```bash
-sudo pacman -S --needed waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils inetutils zip kicad kicad-library kicad-library-3d sl firefox kitty cmake vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord ruby tree alsa-utils nwg-look gnome-themes-extra nextcloud-client superfile tree-sitter-cli gnome-keyring libsecret seahorse zoxide wl-clipboard swappy grim slurp socat jq
+sudo pacman -S --needed waybar hyprlock hypridle keyd mpd rmpc neovim rofi swaync qt6ct tmux wev kvantum networkmanager network-manager-applet nemo brightnessctl hyprpicker gimp gmic gimp-plugin-gmic ghostscript gsfonts mypaint-brushes imagemagick nodejs npm clang docker xorg-xhost ufw openssh unzip git base-devel fastfetch stow noto-fonts-emoji usbutils inetutils zip kicad kicad-library kicad-library-3d sl firefox kitty cmake vlc vlc-plugin-ffmpeg rofi-emoji wpaperd bat p7zip unrar bluetui obsidian btop filezilla nvm pavucontrol evtest discord ruby tree alsa-utils nwg-look gnome-themes-extra nextcloud-client superfile tree-sitter-cli gnome-keyring libsecret seahorse zoxide wl-clipboard swappy grim slurp socat jq tailscale
 ```
 ```bash
 yay -S --needed wlogout gimp-plugin-resynthesizer docker-buildx webapp-manager zen-browser-bin clipse lazydocker ventoy-bin ventoy-bin ttf-vista-fonts onlyoffice-bin mpvpaper mpvpaper-stop-git python-pywal16
