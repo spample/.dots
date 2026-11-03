@@ -2,16 +2,16 @@
 
 local gh = require('core.utils').gh
 
-vim.pack.add({
-  gh('folke/which-key.nvim'),
-  gh('folke/tokyonight.nvim'),
-  gh('folke/todo-comments.nvim'),
-  gh('nvim-lua/plenary.nvim'),
-  gh('nvim-mini/mini.nvim'),
-  gh('folke/trouble.nvim'),
-})
+vim.pack.add {
+  gh 'folke/which-key.nvim',
+  gh 'folke/tokyonight.nvim',
+  gh 'folke/todo-comments.nvim',
+  gh 'nvim-lua/plenary.nvim',
+  gh 'nvim-mini/mini.nvim',
+  gh 'folke/trouble.nvim',
+}
 
-require('which-key').setup({
+require('which-key').setup {
   delay = 0,
   icons = { mappings = vim.g.have_nerd_font },
   spec = {
@@ -24,15 +24,16 @@ require('which-key').setup({
     { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
     { 'gr', group = 'LSP Actions', mode = { 'n' } },
   },
-})
+}
 
-require('tokyonight').setup({
+require('tokyonight').setup {
+  transparent = true,
   styles = { comments = { italic = false } },
-})
-vim.cmd.colorscheme('tokyonight-night')
+}
+vim.cmd.colorscheme 'tokyonight-night'
 
-require('todo-comments').setup({ signs = false })
-require('trouble').setup({})
+require('todo-comments').setup { signs = false }
+require('trouble').setup {}
 
 vim.keymap.set('n', '<leader>xx', '<cmd>Trouble diagnostics toggle<CR>', { desc = 'Diagnostics panel' })
 vim.keymap.set('n', '<leader>xX', '<cmd>Trouble diagnostics toggle filter.buf=0<CR>', { desc = 'Buffer diagnostics' })
@@ -44,8 +45,8 @@ if vim.g.have_nerd_font then
   MiniIcons.mock_nvim_web_devicons()
 end
 
-require('mini.ai').setup({
+require('mini.ai').setup {
   mappings = { around_next = 'aa', inside_next = 'ii' },
   n_lines = 500,
-})
+}
 require('mini.surround').setup()
