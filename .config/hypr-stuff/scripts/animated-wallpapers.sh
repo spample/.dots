@@ -1,67 +1,44 @@
 #!/bin/bash
 
-DIR="$HOME/.config/hypr-stuff/wallpapers/animated/"
-INTERVAL=600
-SOCKET="/tmp/mpvsocket"
-STATE_FILE="/tmp/wallpaper_state"
-
-# 1. Handle manual triggers from your keybinds
-if [[ "$1" == "next" || "$1" == "prev" ]]; then
-    echo "$1" > "$STATE_FILE"
-    # Send a signal to wake the daemon up from its 10-minute sleep
-    pkill -SIGUSR1 -f "animated-wallpapers.sh daemon"
-    exit 0
-fi
-
-# Enforce the daemon argument for the main background loop
-if [[ "$1" != "daemon" ]]; then
-    echo "Error: Must be run with 'daemon', 'next', or 'prev'."
-    exit 1
-fi
-
-# 2. Daemon Initialization
-shopt -s nullglob nocaseglob
-# Load all animations into a sequential array
-WALLPAPERS=("$DIR"/*.{mp4,webm,gif})
-TOTAL=${#WALLPAPERS[@]}
-CURRENT_INDEX=0
-
-if [ "$TOTAL" -eq 0 ]; then exit 1; fi
-
+# Function to generate Pywal colors and apply them to the system
 apply_theme() {
-    ffmpeg -y -i "$1" -vframes 1 -q:v 2 /tmp/wall_frame.jpg -loglevel quiet
-    wal -i /tmp/wall_frame.jpg -n -q
+    local image_path=$1
+    # Generate the Pywal color scheme quietly without changing the wallpaper
+    wal -i "$image_path" -n -q
+    
     killall -SIGUSR2 waybar
+    hyprctl reload > /dev/null 2>&1
 }
 
-# Trap the manual signal to instantly kill the background sleep timer
-trap 'pkill -P $$ sleep' SIGUSR1
+BAT_CAPACITY=$(cat /sys/class/power_supply/BAT*/capacity | head -n 1)
+BAT_STATUS=$(cat /sys/class/power_supply/BAT*/status | head -n 1)
 
-killall mpvpaper 2>/dev/null
-apply_theme "${WALLPAPERS[$CURRENT_INDEX]}"
-mpvpaper -o "no-audio --loop-file --panscan=1 --input-ipc-server=$SOCKET" ALL "${WALLPAPERS[$CURRENT_INDEX]}" &
-
-# 3. Main Loop
-while true; do
-    # Default action is moving forward automatically
-    echo "next" > "$STATE_FILE"
+# Check if battery is 50% or lower AND we are not plugged into the wall
+if [ "$BAT_CAPACITY" -le 50 ] && [ "$BAT_STATUS" = "Discharging" ]; then
     
-    # Sleep in the background so the trap can interrupt it
-    sleep $INTERVAL &
-    wait $!
+    # Pick Static Wallpaper
+    NEXT_WALL=$(ls ~/.config/hypr-stuff/wallpapers/static/* | shuf -n 1)
+    cp "$NEXT_WALL" /tmp/wall_frame.jpg
+    killall -q mpvpaper swaybg mpvpaper-stop
+    
+    # Display Static Wallpaper
+    swaybg -i "$NEXT_WALL" -m fill &
+else
+    
+    # Pick Animated Wallpaper
+    NEXT_WALL=$(ls ~/.config/hypr-stuff/wallpapers/animated/* | shuf -n 1)
+    
+    # Extract a single frame to /tmp for Pywal
+    ffmpeg -y -i "$NEXT_WALL" -vframes 1 -q:v 2 /tmp/wall_frame.jpg -loglevel quiet
+    
+    killall -q mpvpaper swaybg mpvpaper-stop
+    
+    # Play Video
+    mpvpaper -o "no-audio --loop-file --panscan=1 --input-ipc-server=/tmp/mpvsocket" ALL "$NEXT_WALL" &
 
-    # Check if we were woken up by a manual bind or a natural timeout
-    ACTION=$(cat "$STATE_FILE" 2>/dev/null)
+    sleep 0.5
+    mpvpaper-stop --fork
+fi
 
-    if [[ "$ACTION" == "prev" ]]; then
-        # Wrap around backwards
-        CURRENT_INDEX=$(( (CURRENT_INDEX - 1 + TOTAL) % TOTAL ))
-    else
-        # Wrap around forwards
-        CURRENT_INDEX=$(( (CURRENT_INDEX + 1) % TOTAL ))
-    fi
-
-    NEW_WALLPAPER="${WALLPAPERS[$CURRENT_INDEX]}"
-    apply_theme "$NEW_WALLPAPER"
-    echo '{ "command": ["loadfile", "'"$NEW_WALLPAPER"'"] }' | socat - "$SOCKET"
-done
+# Apply the theme using the /tmp file we prepared
+apply_theme "/tmp/wall_frame.jpg"

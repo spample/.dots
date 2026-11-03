@@ -42,3 +42,15 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     if mark[1] > 0 and mark[1] <= line_count then pcall(vim.api.nvim_win_set_cursor, 0, mark) end
   end,
 })
+
+-- make md files not transparent
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function()
+    -- Create a custom highlight using TokyoNight-night's exact background hex
+    vim.api.nvim_set_hl(0, 'MarkdownSolid', { bg = '#1a1b26' })
+
+    -- Apply it locally to the current window's background elements
+    vim.opt_local.winhighlight = 'Normal:MarkdownSolid,NormalNC:MarkdownSolid,EndOfBuffer:MarkdownSolid,SignColumn:MarkdownSolid'
+  end,
+})
