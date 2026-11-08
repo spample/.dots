@@ -29,6 +29,17 @@ require('blink.cmp').setup({
   },
   sources = {
     default = { 'lsp', 'path', 'snippets' },
+    per_filetype = {
+      qml = { 'lsp', 'quickshell', 'path', 'snippets', 'buffer' },
+    },
+    providers = {
+      quickshell = {
+        name = 'Quickshell',
+        module = 'quickshell.completion',
+        score_offset = 5,
+        min_keyword_length = 0,
+      },
+    },
   },
   snippets = {
     preset = 'luasnip',

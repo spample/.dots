@@ -1,21 +1,19 @@
 -- LSP, Mason tool installation, and C/C++ IDE mappings.
 
-vim.pack.add({
+vim.pack.add {
   'https://github.com/j-hui/fidget.nvim',
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/mason-org/mason.nvim',
   'https://github.com/mason-org/mason-lspconfig.nvim',
   'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
-})
+}
 
-require('fidget').setup({})
-require('mason').setup({})
+require('fidget').setup {}
+require('mason').setup {}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local ok, blink = pcall(require, 'blink.cmp')
-if ok then
-  capabilities = blink.get_lsp_capabilities(capabilities)
-end
+if ok then capabilities = blink.get_lsp_capabilities(capabilities) end
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('custom-lsp-attach', { clear = true }),
@@ -63,12 +61,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     if client and client:supports_method('textDocument/inlayHint', event.buf) then
-      map('<leader>th', function()
-        vim.lsp.inlay_hint.enable(
-          not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }),
-          { bufnr = event.buf }
-        )
-      end, 'Toggle Inlay Hints')
+      map(
+        '<leader>th',
+        function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }, { bufnr = event.buf }) end,
+        'Toggle Inlay Hints'
+      )
     end
   end,
 })
@@ -76,7 +73,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local servers = {
   clangd = {
     cmd = {
-      vim.fn.expand('$HOME') .. '/.local/share/nvim/mason/bin/clangd',
+      vim.fn.expand '$HOME' .. '/.local/share/nvim/mason/bin/clangd',
       '--background-index',
       '--clang-tidy',
       '--completion-style=detailed',
@@ -102,8 +99,20 @@ local servers = {
   },
 
   qmlls = {
-    cmd = { 'qmlls6' },
-    root_markers = { '.qmlls.ini', 'qmlproject', '.git' },
+    cmd = { '/usr/lib/qt6/bin/qmlls' },
+
+    filetypes = { 'qml', 'qmljs' },
+
+    root_dir = function(bufnr, on_dir)
+      local filename = vim.api.nvim_buf_get_name(bufnr)
+
+      local root = vim.fs.root(filename, {
+        '.qmlls.ini',
+        'shell.qml',
+      })
+
+      on_dir(root or vim.fn.getcwd())
+    end,
   },
   gopls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
@@ -116,10 +125,7 @@ local servers = {
       client.server_capabilities.documentFormattingProvider = false
       if client.workspace_folders then
         local path = client.workspace_folders[1].name
-        if path ~= vim.fn.stdpath('config')
-          and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then
-          return
-        end
+        if path ~= vim.fn.stdpath 'config' and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then return end
       end
       client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
         runtime = {
@@ -139,18 +145,23 @@ local servers = {
   },
 }
 
-local ensure_installed = vim.tbl_keys(servers)
+local ensure_installed = {}
+
+for name, _ in pairs(servers) do
+  if name ~= 'qmlls' then table.insert(ensure_installed, name) end
+end
+
 vim.list_extend(ensure_installed, {
   'stylua',
   'clang-format',
   'codelldb',
 })
 
-require('mason-tool-installer').setup({
+require('mason-tool-installer').setup {
   ensure_installed = ensure_installed,
   auto_update = false,
   run_on_start = true,
-})
+}
 
 for name, config in pairs(servers) do
   config.capabilities = capabilities

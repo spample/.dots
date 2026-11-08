@@ -13,6 +13,7 @@ require('conform').setup {
       objc = true,
       objcpp = true,
       lua = true,
+      qml = true,
       python = true,
     }
     if enabled[vim.bo[bufnr].filetype] then return { timeout_ms = 1000, lsp_format = 'fallback' } end
@@ -22,6 +23,12 @@ require('conform').setup {
     lsp_format = 'fallback',
   },
   formatters = {
+    qmlformat = {
+      command = vim.fn.executable('/usr/lib/qt6/bin/qmlformat') == 1
+          and '/usr/lib/qt6/bin/qmlformat' or 'qmlformat',
+      args = { '--inplace', '--indent-width', '2', '$FILENAME' },
+      stdin = false,
+    },
     ['clang-format'] = {
       prepend_args = function(_, ctx)
         local dir = vim.fs.dirname(ctx.filename)
@@ -37,6 +44,7 @@ require('conform').setup {
     objc = { 'clang-format' },
     objcpp = { 'clang-format' },
     lua = { 'stylua' },
+    qml = { 'qmlformat' },
   },
 }
 

@@ -1,7 +1,4 @@
 # C/C++ Neovim configuration
-
-This is the supplied config with a C/C++ IDE layer added.
-
 ## System programs
 
 Install these with your distro package manager:
@@ -129,18 +126,3 @@ CMake configure uses:
 
 Compile with debug symbols (`-g`) before debugging. The supplied single-file and Debug CMake tasks do this appropriately.
 
-## Recommended project file
-
-Copy `extras/.clang-format.example` to a C/C++ project's root as `.clang-format` if you want an explicit project formatting policy.
-
-## Testing without replacing your config
-
-A safe test method is to give the config a separate Neovim app name:
-
-```bash
-mkdir -p ~/.config/nvim-cpp-test
-cp -a /path/to/extracted/nvim/. ~/.config/nvim-cpp-test/
-NVIM_APPNAME=nvim-cpp-test nvim
-```
-
-Your normal `~/.config/nvim` remains untouched.

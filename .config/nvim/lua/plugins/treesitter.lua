@@ -24,6 +24,7 @@ local parsers = {
   'vimdoc',
   'python',
   'javascript',
+  'qmljs',
   'java',
   'dockerfile',
   'toml',
