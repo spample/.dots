@@ -28,10 +28,11 @@ hl.config({
 		blur = {
 			enabled = true,
 			size = 7,
-			passes = 2,
+			passes = 3,
 			ignore_opacity = true,
 			noise = 0.03,
 			contrast = 1.5,
+			--variant = "drops",
 		},
 		shadow = {
 			enabled = true,
@@ -41,23 +42,23 @@ hl.config({
 		},
 		glow = {
 			enabled = true,
-			range = 8,
+			range = 12,
 			render_power = 2,
 			color = { colors = { dynamic_accent, dynamic_accent }, angle = 45 },
 			color_inactive = "rgba(00000000)",
 		},
 	},
-	-- 	plugin = {
-	-- 		hyprglass = {
-	-- 			default_theme = "dark",
-	-- 			default_preset = "clear",
-	-- 			tint_color = 0x8899aa22,
-	-- 			brightness = 0.9,
-	-- 			glass_opacity = 0.7,
-	-- 			blur_strength = 1,
-	-- 			lens_distortion = 0.8,
-	-- 		},
+	-- plugin = {
+	-- 	hyprglass = {
+	-- 		default_theme = "dark",
+	-- 		default_preset = "clear",
+	-- 		tint_color = 0x8899aa22,
+	-- 		brightness = 0.9,
+	-- 		glass_opacity = 0.7,
+	-- 		blur_strength = 1,
+	-- 		lens_distortion = 0.8,
 	-- 	},
+	-- },
 })
 
 -- Keep the layer whitelists outside the main config block
