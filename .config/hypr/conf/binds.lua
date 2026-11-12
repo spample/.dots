@@ -39,6 +39,9 @@ hl.bind(mainMod .. " + " .. "S", hl.dsp.layout("togglesplit"))
 -- Opens the browser
 hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("zen-browser"))
 
+-- Bind the shortcut to launch Kitty and execute Tuxedo
+hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("kitty --class tuxedo_scratchpad -e tuxedo"))
+
 -- Reload Waybar
 --hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "B", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr-stuff/scripts/reload-waybar.sh"))
 
