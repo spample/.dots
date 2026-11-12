@@ -18,6 +18,21 @@ hl.config({
 })
 
 hl.device({
+	name = "asuf1209:00-2808:0219-touchpad",
+	disable_while_typing = true,
+})
+
+hl.device({
+	name = "asuf1209:00-2808:0219-mouse",
+	enabled = false,
+})
+
+hl.device({
+	name = "keyd-virtual-pointer",
+	enabled = false,
+})
+
+hl.device({
 	name = "razer-razer-basilisk-v3",
 	sensitivity = -1.0,
 })
