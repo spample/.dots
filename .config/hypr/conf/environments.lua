@@ -35,6 +35,11 @@ hl.config({
 	},
 })
 
+-- Tuxedo env (To-do app)
+hl.env("TODO_DIR", "/home/spample/Documents/Nextcloud/Documents/todo")
+hl.env("TODO_FILE", "/home/spample/Documents/Nextcloud/Documents/todo/todo.txt")
+hl.env("DONE_FILE", "/home/spample/Documents/Nextcloud/Documents/todo/done.txt")
+
 -- Exec (run every reload)
 hl.on("config.reloaded", function()
 	hl.exec_cmd('gsettings set org.gnome.desktop.wm.preferences theme "Nordic"')
