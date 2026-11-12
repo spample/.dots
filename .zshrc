@@ -41,6 +41,7 @@ alias clear='clear && fastfetch'
 alias platio='source ~/.platformio/penv/bin/activate'
 alias gitAC='git add . && git commit -m'
 alias ls='ls -h --color=auto'
+alias conf='cd $HOME/.dots/.config/'
 
 # Example: pio-init Project-name --board seeed_xiao_esp32c3
 pio-init() {
@@ -278,7 +279,6 @@ export VCPKG_DISABLE_METRICS=1
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
-
 
 nvm() {
   unset -f nvm
