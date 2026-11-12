@@ -15,7 +15,7 @@ By: **Luis Gonzalez**
 | :---: | :---: |
 | ![Desktop Preview 3](./misc/imgPreviews/dots_preview3.png) | ![Desktop Preview 4](./misc/imgPreviews/dots_preview4.png) |
 
-> All wallpapers made by [waneella](https://www.patreon.com/cw/waneella)
+> Most wallpapers made by [waneella](https://www.patreon.com/cw/waneella)
 
 <div align="center">
     <h1>
