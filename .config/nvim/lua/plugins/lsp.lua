@@ -1,3 +1,4 @@
+
 -- LSP, Mason tool installation, and C/C++ IDE mappings.
 
 vim.pack.add {
@@ -103,6 +104,12 @@ local servers = {
 
     filetypes = { 'qml', 'qmljs' },
 
+    -- Disable semantic tokens for qmlls to avoid
+    -- Neovim semantic_tokens.lua errors.
+    on_init = function(client)
+      client.server_capabilities.semanticTokensProvider = nil
+    end,
+
     root_dir = function(bufnr, on_dir)
       local filename = vim.api.nvim_buf_get_name(bufnr)
 
@@ -114,12 +121,14 @@ local servers = {
       on_dir(root or vim.fn.getcwd())
     end,
   },
+
   gopls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   cssls = {},
   dockerls = {},
   jsonls = {},
   yamlls = {},
+
   lua_ls = {
     on_init = function(client)
       client.server_capabilities.documentFormattingProvider = false
@@ -168,3 +177,4 @@ for name, config in pairs(servers) do
   vim.lsp.config(name, config)
   vim.lsp.enable(name)
 end
+

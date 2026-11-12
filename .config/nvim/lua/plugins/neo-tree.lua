@@ -16,6 +16,13 @@ vim.keymap.set('n', '\\', '<cmd>Neotree reveal<CR>', {
 -- Filesystem window settings.
 require('neo-tree').setup {
   filesystem = {
+    -- Add this block to show hidden and git-ignored files by default
+    filtered_items = {
+      visible = false,
+      hide_dotfiles = false,
+      hide_gitignored = false,
+      hide_hidden = false,
+    },
     use_libuv_file_watcher = true,
     window = {
       width = 30,
@@ -24,4 +31,4 @@ require('neo-tree').setup {
       },
     },
   },
-}
+} -- Filesystem window settings.
