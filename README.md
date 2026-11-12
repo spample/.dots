@@ -196,15 +196,16 @@ hl.exec_once("mkdir -p ~/.cache/wal && touch ~/.cache/wal/colors-waybar.css && w
 ```
 ##  keyd installation
 ```bash
-cd ~/Documents/github
-git clone https://github.com/rvaiya/keyd
-cd keyd
-make && sudo make install
 sudo systemctl enable --now keyd
 ```
 ### symlink into system shortcuts
 ```bash
 sudo ln -s ~/.dots/.config/keyd/default.conf /etc/keyd/
+```
+## libinput
+```bash
+sudo mkdir -p /etc/libinput
+sudo ln -s ~/.dots/.config/libinput/local-overrides.quirks /etc/libinput/
 ```
 ---
 ## GTK Theme
@@ -445,10 +446,11 @@ rm -rf ~/.tmux/plugins/tmux-resurrect ~/.tmux/plugins/tmux-continuum
 ```bash
 ~/.tmux/plugins/tpm/bin/install_plugins
 ```
-## Disabling SDDM/Display Manager
+## Disabling/Uninstalling SDDM/Display Manager
 #### Step 1. stop sddm from running
 ```bash
 sudo systemctl disable sddm
+sudo pacman -Rns sddm
 ```
 #### Step 2. Configure Zsh to Autostart Hyprland
 Ensure, this:
